@@ -6,17 +6,21 @@ import AllSalesPage from '../../pages/AllSalesPage';
 import BasketPage from '../../pages/BasketPage';
 import CategoriesPage from '../../pages/CategoriesPage';
 import NotFoundPage from '../../pages/NotFoundPage';
+import Nav from './Nav';
 
 function App() {
-  return (
-		<Routes>
-			<Route path='/' element={<MainPage />} />
-			<Route path='/products/all' element={<AllProductsPage />} />
-			<Route path='/products/sale' element={<AllSalesPage/>} />
-			<Route path='/basket' element={<BasketPage />} />
-			<Route path='/catalog' element={<CategoriesPage />} />
-			<Route path='/*' element={<NotFoundPage />} />
-		</Routes>
+	return (
+		<div>
+			<Nav/>
+			<Routes>
+				<Route path='/' element={<MainPage />} />
+				<Route path='/products/all' element={<AllProductsPage />} />
+				<Route path='/products/sale' element={<AllSalesPage />} />
+				<Route path='/basket' element={<BasketPage />} />
+				<Route path='/catalog' element={<CategoriesPage />} />
+				<Route path='/*' element={<NotFoundPage />} />
+			</Routes>
+		</div>
 	);
 }
 

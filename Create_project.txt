@@ -3,3 +3,9 @@
 3. подключила к роутингу, установив сначала библиотеку npm i react-router-dom. Обернула АРР в BrowserRouter в index.js.
 4. сделала связку пути и отображаемой страницы. В index в Арр, подключила Routes и внутри его Route с путем к странице.
 5. import photo 404.
+6. подключила redux npm i redux react-redux.
+7. и отобразила страницы. Папка store в src, index.js, categoryReducer
+8. добавила провайдер в index.js, обернула в него и передала store
+9. считала данные CategoriesPage используя useSelector
+10. создала навигацию и переключение страниц, все компаненты в арр обернула в ProviderStore и передала store. 
+11. создала CategoriesItem, пока выводится в виде карточек дкфолтный массив и ссылки на категорию.

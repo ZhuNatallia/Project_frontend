@@ -1,0 +1,14 @@
+.nav{
+    height: 110px;
+    border: 1px solid black;
+}
+
+.nav a{
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav .active{
+    border-bottom: 2px solid rgb(32, 128, 45);
+}
