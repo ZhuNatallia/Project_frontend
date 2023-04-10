@@ -1,0 +1,5 @@
+1. создала реакт приложение, почистила лишнее, создала папку компанентс и Апп.
+2. создала папку pages и страницы: AllProductsPage, AllSalesPage, BasketPage, CategoriesPage, MainPage, NotFoundPage.
+3. подключила к роутингу, установив сначала библиотеку npm i react-router-dom. Обернула АРР в BrowserRouter в index.js.
+4. сделала связку пути и отображаемой страницы. В index в Арр, подключила Routes и внутри его Route с путем к странице.
+5. import photo 404.

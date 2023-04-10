@@ -1,0 +1,10 @@
+.image_container {
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	align-items:  center;
+}
+.image_container p {
+	font-size: 20px;
+}
