@@ -9,17 +9,19 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import Nav from './Nav';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { asynkLoadCategoriesAction } from '../../store/asyncAction/categories';
+import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
 
 function App() {
+
 	const dispatch = useDispatch();
+	
 	useEffect(() => {
-		dispatch(asynkLoadCategoriesAction);
-	}, [])
+		dispatch(asyncLoadCategoriesAction);
+	}, []);
 
 	return (
 		<div>
-			<Nav/>
+			<Nav />
 			<Routes>
 				<Route path='/' element={<MainPage />} />
 				<Route path='/products/all' element={<AllProductsPage />} />

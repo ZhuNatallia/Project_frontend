@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { categoriesReducer } from './reducer/categoriesReduser';
-import thunk from 'redux-thunk'
+import { categoriesReducer } from './reducer/categoriesReducer';
+import thunk from 'redux-thunk';
 
 const rootReduser = combineReducers({
-    categories: categoriesReducer
-})
+	categories: categoriesReducer,
+});
 
-export const store = createStore(rootReduser, applyMiddleware(thunk))
+export const store = createStore(rootReduser, applyMiddleware(thunk));

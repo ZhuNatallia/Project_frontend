@@ -11,5 +11,7 @@ export const categoriesLoadAction = (payload) => ({ type: CATEGORIES_LOAD, paylo
 export const categoriesReducer = (state = defaultState, action) => {
 	if (action.type === CATEGORIES_LOAD) {
 		return action.payload
-	} return state;
+	} else {
+		return state
+	}
 }

@@ -10,7 +10,7 @@ export default function CategoriesPage() {
 			<h3>Catalog</h3>
 			<div className={s.container}>
 				{categories.map((item) => (
-					<CategoryItem key={item} label={item} />
+					<CategoryItem key={item.id} image={item.image} label={item.title} />
 				))}
 			</div>
 		</div>
