@@ -8,4 +8,13 @@
 8. добавила провайдер в index.js, обернула в него и передала store
 9. считала данные CategoriesPage используя useSelector
 10. создала навигацию и переключение страниц, все компаненты в арр обернула в ProviderStore и передала store. 
-11. создала CategoriesItem, пока выводится в виде карточек дкфолтный массив и ссылки на категорию.
+11. создала CategoriesItem, пока выводится в виде карточек дефолтный массив и ссылки на категорию.
+12. с ассинхронными action получила данные из Api(backend), для этого: загрузила и подключила библиотеку npm i redux-thunk. 
+    В reducer в createStore вторым аргументом добавила функцию applyMiddLeware.
+    Импорт библиотеки thunk и передаем в качестве аргумента applyMiddLeware(thunk).
+    В store папку asyncAction и файл categories.js
+    функцию asynkLoadCategoriesAction  создала и в Арр при помощи useEffect и dispatch передаю ее.
+13. Вывела данные с ассинхронного запроса. Поправила categoriesReducer, добавила экшенкреейтр categoriesLoadAction и условие в categoriesReducer
+    В categories.js import categoriesLoadAction и передаем ее в dispatch с аргументом data
+
+

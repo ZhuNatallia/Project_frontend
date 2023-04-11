@@ -7,8 +7,16 @@ import BasketPage from '../../pages/BasketPage';
 import CategoriesPage from '../../pages/CategoriesPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 import Nav from './Nav';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { asynkLoadCategoriesAction } from '../../store/asyncAction/categories';
 
 function App() {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(asynkLoadCategoriesAction);
+	}, [])
+
 	return (
 		<div>
 			<Nav/>
