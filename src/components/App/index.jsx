@@ -10,11 +10,12 @@ import Nav from './Nav';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
+import Footer from '../Footer';
 
 function App() {
 
 	const dispatch = useDispatch();
-	
+
 	useEffect(() => {
 		dispatch(asyncLoadCategoriesAction);
 	}, []);
@@ -30,6 +31,7 @@ function App() {
 				<Route path='/catalog' element={<CategoriesPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
+			<Footer/>
 		</div>
 	);
 }

@@ -5,12 +5,13 @@ import s from './style.module.css';
 
 export default function CategoriesPage() {
 	const categories = useSelector((state) => state.categories);
+	
 	return (
 		<div className={s.page}>
 			<h3>Catalog</h3>
 			<div className={s.container}>
 				{categories.map((item) => (
-					<CategoryItem key={item.id} image={item.image} label={item.title} />
+					<CategoryItem key={item.id} {...item}/>
 				))}
 			</div>
 		</div>
