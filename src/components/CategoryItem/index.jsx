@@ -8,7 +8,7 @@ export default function CategoryItem({ title, image }) {
 	return (
 		<div className={s.item}>
 			<Link to='/catalog'> {/* тут изменить линк на конкретную категорию */}
-				<img src={`${link}${image}`} alt={image} />
+				<img src={`${link}${image}`} alt={title} />
 				<p>{title}</p>
 			</Link>
 		</div>

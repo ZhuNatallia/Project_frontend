@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
 import { NavLink } from 'react-router-dom';
-import Logo from './media/logo.png';
+import Logo from './media/logo1.png';
 import Basket from './media/basket.png';
 
 export default function Nav() {

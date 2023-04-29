@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import ProductItem from '../../components/ProductItem';
+import s from './style.module.css';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products);
 
 	return (
-		<div>
+		<div className={s.container}>
 			{state.map((item) => (
-				<p key={item.id}>{item.title} </p>
+				<ProductItem key={item.id} {...item} />
 			))}
 		</div>
 	);
