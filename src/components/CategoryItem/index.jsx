@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import s from './style.module.css';
 
-export default function CategoryItem({id, title, image }) {
-	const link = `category/${title}`;
-	/* const photo = `category/image/category_img/${image}`; */
+export default function CategoryItem({ title, image }) {
+	const link = 'http://localhost:3333';
+
 	return (
 		<div className={s.item}>
-			<Link to={link}>
-				<img className={s.img} src={image} alt={title} />
+			<Link to='/catalog'> {/* тут изменить линк на конкретную категорию */}
+				<img src={`${link}${image}`} alt={image} />
 				<p>{title}</p>
 			</Link>
 		</div>
