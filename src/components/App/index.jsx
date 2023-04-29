@@ -11,13 +11,14 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
 import Footer from '../Footer';
+import { asyncLoadProductsAction } from '../../store/asyncAction/products';
 
 function App() {
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(asyncLoadCategoriesAction);
+		dispatch(asyncLoadProductsAction);
 	}, []);
 
 	return (
@@ -31,7 +32,7 @@ function App() {
 				<Route path='/catalog' element={<CategoriesPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 }
