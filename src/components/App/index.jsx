@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
 import Footer from '../Footer';
 import { asyncLoadProductsAction } from '../../store/asyncAction/products';
+import CategoryProductsPage from '../../pages/CatagoryProductsPage';
 
 function App() {
 	const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
 				<Route path='/products/sale' element={<AllSalesPage />} />
 				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/catalog' element={<CategoriesPage />} />
+				<Route path='/category/:category' element={<CategoryProductsPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
