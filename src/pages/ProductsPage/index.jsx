@@ -16,14 +16,14 @@ export default function ProductsPage() {
         }
 		
     });
-   /*  const category = useSelector((state) => state.categories.data.find((item) => +id === item.id));
-    console.log(category
-    ); */
+    const category = useSelector((state) => state.categories);
+    console.log(category);
 	return (
 		<div >
-			{/* <h2> {category.title}</h2> */}
+			<h2> {category.title}</h2>
 			<div className={s.container}>
-				{products.map((item) => (
+                {
+                    products.map((item) => (
 					<ProductItem key={item.id} {...item} />
 				))}
 			</div>

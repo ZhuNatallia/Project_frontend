@@ -8,7 +8,7 @@ export default function CategoriesPage() {
 	
 	return (
 		<div className={s.page}>
-			<h3>Catalog</h3>
+			<h3>Categories</h3>
 			<div className={s.container}>
 				{categories.map((item) => (
 					<CategoryItem key={item.id} {...item}/>

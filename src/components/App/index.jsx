@@ -14,6 +14,7 @@ import Footer from '../Footer';
 import { asyncLoadProductsAction } from '../../store/asyncAction/products';
 
 import ProductsPage from '../../pages/ProductsPage';
+import AboutProductPage from '../../pages/AboutProductPage';
 
 function App() {
 	const dispatch = useDispatch();
@@ -32,7 +33,8 @@ function App() {
 				<Route path='/products/sale' element={<AllSalesPage />} />
 				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/catalog' element={<CategoriesPage />} />
-				<Route path='/category/:category' element={<ProductsPage />} />
+				<Route path='/products/:id' element={<AboutProductPage />} />
+				<Route path='/categories/:category' element={<ProductsPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
