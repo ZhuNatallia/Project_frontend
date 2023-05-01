@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import s from './style.module.css';
+import { basketAddAction } from '../../store/reducer/basketReducer';
 
 export default function AboutProductPage() {
 	const { id } = useParams();
+	const dispatch = useDispatch();
 	const product = useSelector(({ products }) =>
 		products.find((item) => item.id === +id)
 	);
@@ -14,7 +16,7 @@ export default function AboutProductPage() {
 		if (product === undefined) {
 			return <p>Page is loading</p>;
 		} else {
-			const { image, title, price, discont_price, description } = product;
+			const { id, image, title, price, discont_price, description } = product;
 			return (
 				<div>
 					<h2>{title} </h2>
@@ -25,7 +27,7 @@ export default function AboutProductPage() {
 								<p>{price} $</p>
 								<p>{discont_price} $</p>
 							</div>
-							<button>To card</button>
+							<button onClick={()=>dispatch(basketAddAction(id))}>To card</button>
 							<p>{description} </p>
 						</div>
 					</div>
