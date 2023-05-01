@@ -5,7 +5,7 @@ import s from './style.module.css';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products);
-	const categories = useSelector((state) => state.categories);
+	/* const categories = useSelector((state) => state.categories); */
 	
 
 	return (

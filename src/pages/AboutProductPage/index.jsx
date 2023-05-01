@@ -1,15 +1,37 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import s from './style.module.css';
 
 export default function AboutProductPage() {
 	const { id } = useParams();
 	const product = useSelector(({ products }) =>
 		products.find((item) => item.id === +id)
 	);
-	return (
-		<div>
-			{product === undefined ? <p>Page is loading</p> : <p>{product.title} </p>}
-		</div>
-	);
+	const link_img = 'http://localhost:3333';
+
+	const render = () => {
+		if (product === undefined) {
+			return <p>Page is loading</p>;
+		} else {
+			const { image, title, price, discont_price, description } = product;
+			return (
+				<div>
+					<h2>{title} </h2>
+					<div className={s.item}>
+						<img src={`${link_img}${image}`} alt={title} />
+						<div className={s.info}>
+							<div className={s.price}>
+								<p>{price} $</p>
+								<p>{discont_price} $</p>
+							</div>
+							<button>To card</button>
+							<p>{description} </p>
+						</div>
+					</div>
+				</div>
+			);
+		}
+	};
+	return render();
 }
