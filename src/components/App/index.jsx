@@ -15,6 +15,7 @@ import { asyncLoadProductsAction } from '../../store/asyncAction/products';
 
 import ProductsPage from '../../pages/ProductsPage';
 import AboutProductPage from '../../pages/AboutProductPage';
+import AllProductsPage from '../../pages/AllProductsPage';
 
 function App() {
 	const dispatch = useDispatch();
@@ -29,12 +30,12 @@ function App() {
 			<Nav />
 			<Routes>
 				<Route path='/' element={<MainPage />} />
-				<Route path='/products/all' element={<ProductsPage />} />
+				<Route path='/products/all' element={<AllProductsPage />} />
 				<Route path='/products/sale' element={<AllSalesPage />} />
 				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/catalog' element={<CategoriesPage />} />
 				<Route path='/products/:id' element={<AboutProductPage />} />
-				<Route path='/categories/:category' element={<ProductsPage />} />
+				<Route path='/categories/:id' element={<ProductsPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
