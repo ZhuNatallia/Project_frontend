@@ -27,7 +27,7 @@ export default function AboutProductPage() {
 								<p>{price} $</p>
 								<p>{discont_price} $</p>
 							</div>
-							<button onClick={()=>dispatch(basketAddAction(id))}>To card</button>
+							<button  className={s.btn} onClick={()=>dispatch(basketAddAction(id))}>To card</button>
 							<p>{description} </p>
 						</div>
 					</div>

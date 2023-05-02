@@ -7,7 +7,6 @@ import {
 	basketRemoveAction,
 } from '../../store/reducer/basketReducer';
 
-
 export default function BasketItem({
 	id,
 	image,
@@ -35,12 +34,11 @@ export default function BasketItem({
 					</div>
 				</div>
 				<div className={s.price}>
-					<p>{price} $</p>
-					<p>{discont_price} $</p>
+					<p>{price * count} $</p>
+					<p>{discont_price * count} $</p>
 				</div>
 				<button onClick={() => dispatch(basketRemoveAction(id))}>X</button>
-            </div>
-            
+			</div>
 		</div>
 	);
 }

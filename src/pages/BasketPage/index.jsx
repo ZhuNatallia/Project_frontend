@@ -13,12 +13,18 @@ export default function BasketPage() {
 
 	return (
 		<div className={s.wrapper}>
-			<div className={s.container}>
-				{data.map((item) => (
-					<BasketItem key={item.id} {...item} />
-				))}
-			</div>
-			<BasketCalculation />
+			{products.length === 0 ? (
+				<p>Data is being loaded</p>
+			) : (
+				<>
+					<div className={s.container}>
+						{data.map((item) => (
+							<BasketItem key={item.id} {...item} />
+						))}
+					</div>
+					<BasketCalculation />
+				</>
+			)}
 		</div>
 	);
 }

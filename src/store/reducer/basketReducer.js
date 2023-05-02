@@ -20,37 +20,42 @@ export const basketRemoveAction = (payload) => ({
 	payload,
 });
 
-const defaultState = [
-	{ id: 1, count: 5 },
-	{ id: 2, count: 7 },
-	{ id: 3, count: 3 },
-];
+const defaultState = JSON.parse(localStorage.getItem('basket')) ?? [];
+
+const writeToLocalStorage = (basket) =>
+	localStorage.setItem('basket', JSON.stringify(basket));
 
 export const basketReducer = (state = defaultState, action) => {
 	if (action.type === BASKET_ADD) {
 		const product = state.find(({ id }) => id === action.payload);
 
 		if (product === undefined) {
-			return [...state, { id: action.payload, count: 1 }];
+			const newstate = [...state, { id: action.payload, count: 1 }];
+			writeToLocalStorage(newstate);
+			return newstate;
 		} else {
 			product.count++;
+			writeToLocalStorage(state);
 			return [...state];
 		}
 	} else if (action.type === BASKET_REMOVE) {
-
-		return state.filter(({id}) => id !== action.payload)
+		const newState = state.filter(({ id }) => id !== action.payload);
+		writeToLocalStorage(newState)
+		return newState
 	} else if (action.type === BASKET_INCR) {
-
 		const product = state.find(({ id }) => id === action.payload);
 		product.count++;
+		writeToLocalStorage(state);
 		return [...state];
 	} else if (action.type === BASKET_DECR) {
-
 		const product = state.find(({ id }) => id === action.payload);
 		product.count--;
 		if (product.count === 0) {
-			return state.filter((item) => item !== product);
+			const newState = state.filter((item) => item !== product);
+			writeToLocalStorage(newState);
+			return newState;
 		}
+		writeToLocalStorage(state);
 		return [...state];
 	}
 	return state;
