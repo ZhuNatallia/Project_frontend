@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import {
 	basketDecrementAction,
 	basketIncrementAction,
-    basketRemoveAction,
+	basketRemoveAction,
 } from '../../store/reducer/basketReducer';
+
 
 export default function BasketItem({
 	id,
@@ -18,23 +19,28 @@ export default function BasketItem({
 	const dispatch = useDispatch();
 	const link_img = 'http://localhost:3333';
 	return (
-		<div className={s.item}>
-			<img src={`${link_img}${image}`} alt={title} />
-			<div className={s.info}>
-				<p>{title} </p>
-				<div className={s.btns}>
-					<button onClick={() => dispatch(basketIncrementAction(id))}>+</button>
-					<p>
-						{price} x {count} = {price * count}
-					</p>
-					<button onClick={() => dispatch(basketDecrementAction(id))}>-</button>
+		<div>
+			<div className={s.item}>
+				<img src={`${link_img}${image}`} alt={title} />
+				<div className={s.info}>
+					<p>{title} </p>
+					<div className={s.btns}>
+						<button onClick={() => dispatch(basketIncrementAction(id))}>
+							+
+						</button>
+						<p>{count}</p>
+						<button onClick={() => dispatch(basketDecrementAction(id))}>
+							-
+						</button>
+					</div>
 				</div>
-			</div>
-			<div className={s.price}>
-				<p>{price} $</p>
-				<p>{discont_price} $</p>
+				<div className={s.price}>
+					<p>{price} $</p>
+					<p>{discont_price} $</p>
+				</div>
+				<button onClick={() => dispatch(basketRemoveAction(id))}>X</button>
             </div>
-            <button onClick={()=>dispatch(basketRemoveAction(id))}>X</button>
+            
 		</div>
 	);
 }
