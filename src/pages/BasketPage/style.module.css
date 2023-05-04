@@ -19,7 +19,7 @@
 .chevron {
 	position: absolute;
 	width: 5px;
-	height: 15px;
+	height: 12px;
 	opacity: 0;
 	transform: scaleX(0.3);
 	animation: move-chevron 3s ease-out infinite;

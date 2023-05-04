@@ -1,0 +1,16 @@
+.wrapper{
+    padding: 50px 30px;
+
+}
+
+.title{
+    width: 40%;
+    display: flex;
+    justify-content: left;
+    padding: 30px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}

@@ -10,9 +10,14 @@ export default function BasketCalculation() {
 		return acc + item.count * product.price;
 	}, 0);
 	return (
-        <div className={s.wrapper}>
-            <h3>Order details</h3>
-			<p>Total {totalPrice} $</p>
+		<div className={s.wrapper}>
+			<h3>Order details</h3>
+			<p>Total: {totalPrice} $</p>
+			<form>
+				<input type='tel' name='phone_number' />
+				
+			</form>
+			<button className={s.btn}>Order</button>
 		</div>
 	);
 }

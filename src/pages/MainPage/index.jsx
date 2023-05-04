@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
 import Background from './media/background.jpg';
+import CatalogMainPageRandom from '../../components/CatalogMainPageRandom';
 
 export default function MainPage() {
 	return (
@@ -11,6 +12,7 @@ export default function MainPage() {
 				<h2>New season</h2>
 				<button>Sale</button>
 			</div>
+			<CatalogMainPageRandom/>
 		</div>
 	);
 }
