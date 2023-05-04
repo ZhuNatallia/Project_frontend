@@ -34,12 +34,42 @@
     font-size: 25px;
     padding: 25px 50px;
     border-radius: 12px;
-    color: darkgreen;
     cursor: pointer;
-    border: none;
 	position: absolute;
 	width: 155px;
 	height: 82px;
 	left: 51px;
 	top: 446px;
+text-decoration: none;
+	outline: none;
+	display: inline-block;
+	overflow: hidden;
+	border: 2px solid #3ca465;
+	/* border: none; */
+	color: #085f2d;
+	transition: 0.2s ease-in-out;
+    
+    
+}
+.welcome_wrapper button:before {
+	content: '';
+	background: linear-gradient(
+		90deg,
+		rgba(245, 241, 241, 0.13),
+		rgba(241, 239, 239, 0.62)
+	);
+	height: 150px;
+	width: 50px;
+	position: absolute;
+	top: -7px;
+	left: -80px;
+	transform: skewX(-45deg);
+}
+.welcome_wrapper button:hover {
+	background-color: #37b96b;
+	color: #f9f5f8;
+}
+.welcome_wrapper button:hover:before {
+	left: 162px;
+	transition: 0.5s ease-in-out;
 }
