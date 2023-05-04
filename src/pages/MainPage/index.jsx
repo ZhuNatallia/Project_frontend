@@ -3,6 +3,7 @@ import s from './style.module.css';
 import Background from './media/background.jpg';
 import CatalogMainPageRandom from '../../components/CatalogMainPageRandom';
 import SaleMainPage from '../../components/SaleMainPage';
+import SaleSlice from '../../components/SaleSlice';
 
 export default function MainPage() {
 	return (
@@ -15,6 +16,7 @@ export default function MainPage() {
 			</div>
 			<CatalogMainPageRandom />
 			<SaleMainPage />
+			<SaleSlice/>
 		</div>
 	);
 }
