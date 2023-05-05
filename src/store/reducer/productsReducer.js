@@ -10,21 +10,22 @@ export const productSortAction = (payload) => ({
 	payload,
 });
 
+const getPrice = ({ filteredPrice }) => +filteredPrice;
+
 export const productsReducer = (state = [], action) => {
 	if (action.type === PRODUCTS_LOAD) {
-		return action.payload;
+		return action.payload.map((item) => ({
+			...item,
+			filteredPrice: item.discont_price ? item.discont_price : item.price,
+		}));
 	} else if (action.type === PRODUCTS_SORT_PRICE) {
 		return [...state].sort((a, b) => {
-			const discont_price = state.find(({ id }) => id === action.payload);
-			if (action.payload === 1 && discont_price !== null) {
-				return a.discont_price - b.discont_price;
-			} else if (action.payload === 2 && discont_price !== null) {
-				return b.discont_price - a.discont_price;
-			} else if (action.payload === 1 && discont_price === null) {
-				return a.price - b.price;
-			} else if (action.payload === 2 && discont_price === null) {
-				return b.price - a.price;
+			if (action.payload === 1) {
+				return getPrice(a) - getPrice(b);
+			} else if (action.payload === 2) {
+				return getPrice(b) - getPrice(a);
 			}
+			return 0;
 		});
 	}
 	return state;

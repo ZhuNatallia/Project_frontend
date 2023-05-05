@@ -33,20 +33,24 @@ export default function BasketItem({
 						</button>
 					</div>
 				</div>
-				<div className={s.price}>
-					<p
-						style={{
-							textDecoration: 'line-through',
-							color: '#8B8B8B',
-							fontSize: '20px',
-						}}
-					>
-						{price * count} $
-					</p>
-					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-						{discont_price * count} $
-					</p>
-				</div>
+				{discont_price !== null ? (
+					<div className={s.price}>
+						<p
+							style={{
+								textDecoration: 'line-through',
+								color: '#8B8B8B',
+								fontSize: '20px',
+							}}
+						>
+							{price} $
+						</p>
+						<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+							{discont_price} $
+						</p>
+					</div>
+				) : (
+					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
+				)}
 				<button onClick={() => dispatch(basketRemoveAction(id))}>X</button>
 			</div>
 		</div>

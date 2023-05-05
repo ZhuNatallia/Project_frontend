@@ -11,6 +11,7 @@ export default function ProductsFilter() {
 	return (
 		<div className={s.container}>
 			<select onChange={sorthOnChange}>
+				{/* <option disabled value=" ">by default</option> */}
 				<option value='1'>Price up</option>
 				<option value='2'>Price down</option>
 			</select>
