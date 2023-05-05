@@ -24,10 +24,32 @@ export default function AboutProductPage() {
 						<img src={`${link_img}${image}`} alt={title} />
 						<div className={s.info}>
 							<div className={s.price}>
-								<p>{price} $</p>
-								<p>{discont_price} $</p>
+								<p
+									style={{
+										textDecoration: 'line-through',
+										color: '#8B8B8B',
+										fontSize: '20px',
+									}}
+								>
+									{price} $
+								</p>
+								<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+									{discont_price} $
+								</p>
+								<p style={{ color: 'red', fontSize: '20px' }}>
+									{(
+										100 -
+										(product.discont_price / product.price) * 100
+									).toFixed(1)}
+									%
+								</p>
 							</div>
-							<button  className={s.btn} onClick={()=>dispatch(basketAddAction(id))}>To card</button>
+							<button
+								className={s.btn}
+								onClick={() => dispatch(basketAddAction(id))}
+							>
+								To card
+							</button>
 							<p>{description} </p>
 						</div>
 					</div>

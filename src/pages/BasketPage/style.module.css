@@ -71,3 +71,7 @@
 		transform: translateX(60px) scale(0.5);
 	}
 }
+.title{
+    font-size: 40px;
+    margin: 30px;
+}

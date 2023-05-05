@@ -14,17 +14,41 @@ export default function ProductItem({
 	const dispatch = useDispatch();
 	const link_img = 'http://localhost:3333';
 	const link = `/product/${id}`;
+	/* const priceProcent = (discont_price * 100 / price)
+	const sale = (100 - priceProcent).toFixed(2)}; */
 	return (
 		<div className={s.item}>
 			<Link to={link} className={s.link}>
 				<img src={`${link_img}${image}`} alt={title} />
-				<div className={s.price}>
-					<p>{price} $</p>
-					<p>{discont_price} $</p>
-				</div>
+
 				<h5>{title} </h5>
 			</Link>
-			<button className={s.btn} onClick={() => dispatch(basketAddAction(id))}>Add to card</button>
+
+			{discont_price !== null ? (
+				<div className={s.price}>
+					<p
+						style={{
+							textDecoration: 'line-through',
+							color: '#8B8B8B',
+							fontSize: '20px',
+						}}
+					>
+						{price} $
+					</p>
+					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+						{discont_price} $
+					</p>
+					<p style={{ color: 'red', fontSize: '20px' }}>
+						{((price / discont_price) * 100 - 100).toFixed(1)} %
+					</p>
+				</div>
+			) : (
+				<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
+			)}
+
+			<button className={s.btn} onClick={() => dispatch(basketAddAction(id))}>
+				Add to card
+			</button>
 		</div>
 	);
 }
