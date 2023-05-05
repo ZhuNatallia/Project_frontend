@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 import { useSelector } from 'react-redux';
+import ProductsFilter from '../../components/ProductsFilter';
 
 
 export default function ProductsPage() {
@@ -33,6 +34,7 @@ export default function ProductsPage() {
 	return (
 		<div>
 			<h2> {category.title}</h2>
+			<ProductsFilter/>
 			<div className={s.container}>
 				{products.map((item) => (
 					<ProductItem key={item.id} {...item} />
