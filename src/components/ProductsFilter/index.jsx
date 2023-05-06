@@ -10,13 +10,39 @@ export default function ProductsFilter() {
 	};
 
 	const [state, setState] = useState(false);
+	const [priceFrom, setPriceFrom] = useState("");
+	const [priceTo, setPriceTo] = useState("");
+
+	/* const formHandleFrom = (e) => {
+		if (e.key === 'Enter') {
+			setPriceFrom(e.target.value);
+		}
+	};
+	const formHandleTo = (e) => {
+		if (e.key === 'Enter') {
+			setPriceTo(e.target.value);
+		}
+	}; */
 
 	return (
-		<div className={s.container}>
+		<fieldset className={s.container}>
 			<div>
-				Price
-				<input type='text' placeholder='from' />
-				<input type='text' placeholder='to' />
+				<span>Price</span>
+				<input
+					onChange={(e) => setPriceFrom(e.target.value)}
+					/* onKeyDown={formHandleFrom} */
+					value={priceFrom}
+					type='number'
+					placeholder='from'
+				/>
+				<input
+					onChange={(e) => setPriceTo(e.target.value)}
+					/* onKeyDown={formHandleTo} */
+					name='priceTo'
+					value={priceTo}
+					type='number'
+					placeholder='to'
+				/>
 			</div>
 			<div>
 				<p>Discounted items {state ? 'yes' : 'No'}</p>
@@ -35,6 +61,6 @@ export default function ProductsFilter() {
 					<option value='2'>Price down</option>
 				</select>
 			</div>
-		</div>
+		</fieldset>
 	);
 }

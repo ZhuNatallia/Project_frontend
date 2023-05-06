@@ -6,7 +6,7 @@ import ProductsFilter from '../../components/ProductsFilter';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products);
-	/* const categories = useSelector((state) => state.categories); */
+	
 	
 
 	return (
