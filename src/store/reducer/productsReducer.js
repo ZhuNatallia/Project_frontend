@@ -20,11 +20,9 @@ export const productsReducer = (state = [], action) => {
 		}));
 	} else if (action.type === PRODUCTS_SORT_PRICE) {
 		return [...state].sort((a, b) => {
-			if (action.payload === 1){
-				return 0
-			}else if (action.payload === 2) {
+			if (action.payload === 1) {
 				return getPrice(a) - getPrice(b);
-			} else if (action.payload === 3) {
+			} else if (action.payload === 2) {
 				return getPrice(b) - getPrice(a);
 			}
 			return 0;

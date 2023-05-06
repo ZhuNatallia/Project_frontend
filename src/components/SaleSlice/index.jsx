@@ -1,4 +1,4 @@
-import React/* , { useEffect, useState } */ from 'react';
+import React from 'react';
 import s from './style.module.css';
 import { useSelector } from 'react-redux';
 import ProductItem from '../ProductItem';
@@ -7,44 +7,10 @@ import ProductItem from '../ProductItem';
 export default function SaleSlice() {
 	const products = useSelector((state) => state.products);
 	const discontProducts = products
+		.slice() //без аргументов создаться копия массива, и в последующем sort не изменит исходный массив
 		.filter(({ discont_price }) => discont_price !== null)
-		/*   .map(({ ...item }) => {
-        return 
-        let position = 'nexSlide';
-        if (item.id === currentIndex) {
-            position = 'activeSlide';
-        }
-        if (
-            item.id === currentIndex - 1 ||
-            (currentIndex === 0 && item.id === discontProducts.length - 1)
-        ) {
-            position = 'lastSlide';
-        }
-        }) */
-		.slice(-4);
-
-	/* 	const [product, setProduct] = useState(discontProducts);
-	const [currentIndex, setCurrentIndex] = useState(0);
-
-	useEffect(() => {
-		const lastIndex = product.length - 1;
-		if (currentIndex < 0) {
-			setCurrentIndex(lastIndex);
-		}
-		if (currentIndex > lastIndex) {
-			setCurrentIndex(0);
-		}
-	}, [currentIndex, product]);
-
-	useEffect(() => {
-		let slider = setInterval(
-			() => setCurrentIndex((prevState) => prevState + 1),
-			2000
-		);
-		return () => {
-			clearInterval(slider);
-		};
-	}, [currentIndex]); */
+		.sort(() => Math.random() - 0.5)
+		.slice(0, 3);
 
 	return (
 		<div className={s.container}>
@@ -64,14 +30,3 @@ export default function SaleSlice() {
 		</div>
 	);
 }
-
-/* let position = 'nexSlide';
-if (id === currentIndex) {
-	position = 'activeSlide';
-}
-if (
-	id === currentIndex - 1 ||
-	(currentIndex === 0 && id === products.length - 1)
-) {
-	position = 'lastSlide';
-} */

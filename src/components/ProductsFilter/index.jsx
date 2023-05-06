@@ -28,13 +28,11 @@ export default function ProductsFilter() {
 			</div>
 
 			<div>
-				<label htmlFor="sort">Sorted</label>
+				<label htmlFor='sort'>Sorted</label>
 				<select id='sort' onChange={sorthOnChange}>
-					<option value='1'>
-						by default
-					</option>
-					<option value='2'>Price up</option>
-					<option value='3'>Price down</option>
+					<option value='by default'>by default</option>
+					<option value='1'>Price up</option>
+					<option value='2'>Price down</option>
 				</select>
 			</div>
 		</div>
