@@ -16,6 +16,9 @@ export default function ProductItem({
 	const link = `/product/${id}`;
 	/* const priceProcent = (discont_price * 100 / price)
 	const sale = (100 - priceProcent).toFixed(2)}; */
+
+	const isSale = ({ isSale }) => (isSale ? s.active : '');
+
 	return (
 		<div className={s.item}>
 			<Link to={link} className={s.link}>
@@ -26,6 +29,7 @@ export default function ProductItem({
 
 			{discont_price !== null ? (
 				<div className={s.price}>
+					<div className={s.sale}>Sale</div>
 					<p
 						style={{
 							textDecoration: 'line-through',
@@ -35,7 +39,9 @@ export default function ProductItem({
 					>
 						{price} $
 					</p>
-					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+					<p
+						style={{ fontWeight: 'bold', fontSize: '26px' }}
+					>
 						{discont_price} $
 					</p>
 					<p style={{ color: 'red', fontSize: '20px' }}>

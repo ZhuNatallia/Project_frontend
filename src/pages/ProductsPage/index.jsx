@@ -37,6 +37,7 @@ export default function ProductsPage() {
 	);
 	/* const category = useSelector((state) => state.categories); */
 	
+	
 	return (
 		<div>
 			<h2> {category.title}</h2>

@@ -2,7 +2,6 @@ import React from 'react';
 import s from './style.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from './media/logo1.png';
-import { useSelector } from 'react-redux';
 import CustNavLink from '../../CustNavLink';
 
 
