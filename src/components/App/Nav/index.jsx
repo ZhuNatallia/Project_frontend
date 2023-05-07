@@ -2,10 +2,9 @@ import React from 'react';
 import s from './style.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from './media/logo1.png';
-/* import Basket from './media/basket.png'; */
 import { useSelector } from 'react-redux';
 import CustNavLink from '../../CustNavLink';
-/* import { useSelector } from 'react-redux'; */
+
 
 export default function Nav() {
 	
@@ -29,9 +28,7 @@ export default function Nav() {
 				</NavLink>
 			))}
 			<CustNavLink/>
-			{/* <NavLink to='/basket'>
-				<img src={Basket} alt='icons' />
-			</NavLink> */}
+			
 		</nav>
 	);
 }
