@@ -4,6 +4,8 @@
     background-color: #f0f3f2;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        display: flex;
+        align-items: center;
 }
 
 .nav a{
@@ -13,5 +15,5 @@
 }
 
 .nav .active{
-    border-bottom: 2px solid rgb(32, 128, 45);
+    border-bottom: 2px solid rgb(23, 126, 36);
 }

@@ -9,6 +9,7 @@ export default function BasketCalculation() {
 		const product = products.find(({ id }) => id === item.id);
 		return acc + item.count * product.price;
 	}, 0);
+	
 	return (
 		<div className={s.wrapper}>
 			<h3>Order details</h3>

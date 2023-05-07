@@ -1,0 +1,20 @@
+.link{
+    position: relative;
+}
+.link::after{
+    content: attr(data-count);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-width: 20px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c521c;
+    color: aliceblue;
+    padding: 2px;
+
+}

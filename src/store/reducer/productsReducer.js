@@ -31,11 +31,11 @@ export const productsReducer = (state = [], action) => {
 					.filter(({ show_flg }) => show_flg)
 					.map((product) => {
 						const { max, min } = priceFilter;
-						product.show_flg = product.price >= min && product.price <= max;
+						state.show_flg = product.price >= min && product.price <= max;
 						return product;
 					})
 			); */
-		}; return filterPrice
+		}; return state
 		
 	} else if (action.type === PRODUCTS_SORT_PRICE) {
 		return [...state]/* .slice() */.sort((a, b) => {

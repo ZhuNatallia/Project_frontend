@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import s from './style.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import {productFilterAction, productSortAction} from '../../store/reducer/productsReducer';
+import {
+	productFilterAction,
+	productSortAction,
+} from '../../store/reducer/productsReducer';
 
 export default function ProductsFilter() {
-	const list = useSelector((state) => state.products.list);
+	const products = useSelector((state) => state.products.list);
 
 	const dispatch = useDispatch();
 
@@ -20,11 +23,11 @@ export default function ProductsFilter() {
 		min: -Infinity,
 		max: Infinity,
 	});
-	const [products, setProduct] = useState(list);
+	/* const [products, setProduct] = useState(list); */
 
 	/* const filterPrice = () => {
-		setProduct((previosValue) =>
-			previosValue.filter(({show_flg})=> show_flg).map((product) => {
+		setProduct((state) =>
+			state.filter(({show_flg})=> show_flg).map((product) => {
 				const { max, min } = priceFilter;
 				product.show_flg =
 					product.price >= min && product.price <= max;
@@ -34,8 +37,8 @@ export default function ProductsFilter() {
 	}; */
 
 	useEffect(() => {
-		productFilterAction()
-	},[priceFilter])
+		productFilterAction();
+	}, [priceFilter]);
 
 	const maxInput = (event) => {
 		setPriceFilter((previosValue) => ({
@@ -48,7 +51,7 @@ export default function ProductsFilter() {
 			...previosValue,
 			min: +event.target.value || Infinity,
 		}));
-	}; 
+	};
 
 	return (
 		<fieldset className={s.container}>
@@ -58,13 +61,13 @@ export default function ProductsFilter() {
 					type='number'
 					placeholder='min'
 					value={priceFilter.min}
-					onChange={minInput}
+					onChange={() => dispatch(productFilterAction(minInput))}
 				/>
 				<input
 					type='number'
 					placeholder='max'
 					value={priceFilter.max}
-					onChange={maxInput}
+					onChange={() => dispatch(productFilterAction(maxInput))}
 				/>
 			</form>
 			{/* <div>
