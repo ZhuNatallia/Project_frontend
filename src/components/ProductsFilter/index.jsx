@@ -5,6 +5,7 @@ import {
 	productFilterAction,
 	productSortAction,
 } from '../../store/reducer/productsReducer';
+import ProductsFilterBar from '../ProductsFilterBar';
 
 export default function ProductsFilter() {
 	const products = useSelector((state) => state.products.list);
@@ -87,6 +88,7 @@ export default function ProductsFilter() {
 					<option value='2'>Price down</option>
 				</select>
 			</div>
+			<ProductsFilterBar/>
 		</fieldset>
 	);
 }

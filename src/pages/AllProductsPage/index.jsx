@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 import ProductsFilter from '../../components/ProductsFilter';
 import Pagination from '../../components/Pagination';
+import { productsResetFilter } from '../../store/reducer/productsReducer';
+
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products);
+
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(productsResetFilter())
+	}, [])
 
 	const [products, setProducts] = useState([]);
 	const [crntPage, setCrntPage] = useState(1);
@@ -23,9 +30,12 @@ export default function AllProductsPage() {
 		<div>
 			<ProductsFilter />
 			<div className={s.container}>
-				{state.slice(firstElem, lastElem).map((item) => (
-					<ProductItem key={item.id} {...item} />
-				))}
+				{state
+					.filter(({ show }) => show)
+					.slice(firstElem, lastElem)
+					.map((item) => (
+						<ProductItem key={item.id} {...item} />
+					))}
 			</div>
 			<Pagination
 				setCrntPage={setCrntPage}

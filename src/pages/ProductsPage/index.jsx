@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductsFilter from '../../components/ProductsFilter';
+import { productsResetFilter } from '../../store/reducer/productsReducer';
 
 
 export default function ProductsPage() {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(productsResetFilter())
+	}, [])
+
 	const { id } = useParams();
 
 	/* const productsAll = useSelector((state) => state.products);
@@ -34,11 +40,13 @@ export default function ProductsPage() {
 	return (
 		<div>
 			<h2> {category.title}</h2>
-			<ProductsFilter/>
+			<ProductsFilter />
 			<div className={s.container}>
-				{products.map((item) => (
-					<ProductItem key={item.id} {...item} />
-				))}
+				{products
+					.filter(({ show }) => show)
+					.map((item) => (
+						<ProductItem key={item.id} {...item} />
+					))}
 			</div>
 		</div>
 	);
