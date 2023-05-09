@@ -8,7 +8,7 @@ import Pagination from '../../components/Pagination';
 import { productsReset } from '../../store/slice/productSlice';
 
 export default function AllProductsPage() {
-	const state = useSelector((state) => state.products);
+	const state = useSelector((state) => state.products.list);
 
 	const dispatch = useDispatch();
 	useEffect(() => {

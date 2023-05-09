@@ -2,7 +2,8 @@ import React from 'react';
 import s from './style.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { basketAddAction } from '../../store/reducer/basketReducer';
+/* import { basketAddAction } from '../../store/reducer/basketReducer'; */
+import { basketAdd } from '../../store/slice/basketSlice';
 
 export default function ProductItem({
 	id,
@@ -48,7 +49,7 @@ export default function ProductItem({
 				<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
 			)}
 
-			<button className={s.btn} onClick={() => dispatch(basketAddAction(id))}>
+			<button className={s.btn} onClick={() => dispatch(basketAdd(id))}>
 				Add to card
 			</button>
 		</div>

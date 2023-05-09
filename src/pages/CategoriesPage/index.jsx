@@ -4,7 +4,7 @@ import CategoryItem from '../../components/CategoryItem';
 import s from './style.module.css';
 
 export default function CategoriesPage() {
-	const categories = useSelector((state) => state.categories);
+	const categories = useSelector((state) => state.categories.list);
 
 	return (
 		<div className={s.page}>

@@ -4,7 +4,7 @@ import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 
 export default function AllSalesPage() {
-	const products = useSelector((state) => state.products);
+	const products = useSelector((state) => state.products.list);
 	const discontProducts = products.filter(
 		({ discont_price }) => discont_price !== null
 	);

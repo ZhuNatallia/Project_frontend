@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './style.module.css';
 import { useDispatch } from 'react-redux';
-import {
+/* import {
 	basketDecrementAction,
 	basketIncrementAction,
 	basketRemoveAction,
-} from '../../store/reducer/basketReducer';
+} from '../../store/reducer/basketReducer'; */
+import { basketDecrement, basketIncrement, basketRemove } from '../../store/slice/basketSlice';
 
 export default function BasketItem({
 	id,
@@ -24,11 +25,11 @@ export default function BasketItem({
 				<div className={s.info}>
 					<p>{title} </p>
 					<div className={s.btns}>
-						<button onClick={() => dispatch(basketIncrementAction(id))}>
+						<button onClick={() => dispatch(basketIncrement(id))}>
 							+
 						</button>
 						<p>{count}</p>
-						<button onClick={() => dispatch(basketDecrementAction(id))}>
+						<button onClick={() => dispatch(basketDecrement(id))}>
 							-
 						</button>
 					</div>
@@ -51,7 +52,7 @@ export default function BasketItem({
 				) : (
 					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
 				)}
-				<button onClick={() => dispatch(basketRemoveAction(id))}>X</button>
+				<button onClick={() => dispatch(basketRemove(id))}>X</button>
 			</div>
 		</div>
 	);

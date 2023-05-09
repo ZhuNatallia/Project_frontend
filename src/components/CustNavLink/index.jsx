@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import s from './style.module.css'
 
 export default function CustNavLink({...item}) {
-	const basket = useSelector(({ basket }) => basket);
+	const basket = useSelector((state) => state.basket.list);
     const totalCount = basket.reduce((acc, { count }) => acc + count, 0);
     
 	return (

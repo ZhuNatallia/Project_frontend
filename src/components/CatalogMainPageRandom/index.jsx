@@ -5,7 +5,7 @@ import s from './style.module.css';
 import { Link } from 'react-router-dom';
 
 export default function CatalogMainPageRandom() {
-	const categories = useSelector((state) => state.categories)
+	const categories = useSelector((state) => state.categories.list)
 		.slice()
 		.sort(() => Math.random() - 0.5)
 		.slice(0, 4);;

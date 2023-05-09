@@ -6,7 +6,8 @@ import BasketCalculation from '../../components/BasketCalculation';
 import { Link } from 'react-router-dom';
 
 export default function BasketPage() {
-	const { basket, products } = useSelector((state) => state);
+	const basket  = useSelector((state) => state.basket.list);
+	const products = useSelector((state) => state.products.list);
 	const data = basket.map((item) => {
 		const product = products.find(({ id }) => id === item.id);
 		return { ...item, ...product };

@@ -5,7 +5,7 @@ import ProductItem from '../ProductItem';
 /* import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'; */
 
 export default function SaleSlice() {
-	const products = useSelector((state) => state.products);
+	const products = useSelector((state) => state.products.list);
 	const discontProducts = products
 		.slice() //без аргументов создаться копия массива, и в последующем sort не изменит исходный массив
 		.filter(({ discont_price }) => discont_price !== null)

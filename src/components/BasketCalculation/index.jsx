@@ -3,7 +3,8 @@ import s from './style.module.css';
 import { useSelector } from 'react-redux';
 
 export default function BasketCalculation() {
-	const { basket, products } = useSelector((state) => state);
+	const  basket  = useSelector((state) => state.basket.list);
+	const  products  = useSelector((state) => state.products.list);
 
 	const totalPrice = basket.reduce((acc, item) => {
 		const product = products.find(({ id }) => id === item.id);

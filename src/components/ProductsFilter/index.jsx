@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productSort } from '../../store/slice/productSlice';
 import ProductsFilterBar from '../ProductsFilterBar';
 
-export default function ProductsFilter({sale}) {
+export default function ProductsFilter() {
 	const products = useSelector((state) => state.products.list);
 
 	const dispatch = useDispatch();

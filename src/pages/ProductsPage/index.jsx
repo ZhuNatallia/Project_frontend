@@ -28,12 +28,12 @@ export default function ProductsPage() {
 
 	const products = useSelector((state) => {
 		if (id === undefined) {
-			return state.products;
+			return state.products.list;
 		} else {
-			return state.products.filter((item) => item.categoryId === +id);
+			return state.products.list.filter((item) => item.categoryId === +id);
 		}
 	}); 
-	const category = useSelector((state) => state.categories.filter((item) => +id === +item.id)
+	const category = useSelector((state) => state.categories.list.filter((item) => +id === +item.id)
 	);
 	/* const category = useSelector((state) => state.categories); */
 	

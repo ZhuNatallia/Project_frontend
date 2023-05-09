@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import s from './style.module.css';
-import { basketAddAction } from '../../store/reducer/basketReducer';
+/* import { basketAddAction } from '../../store/reducer/basketReducer'; */
+import { basketAdd } from '../../store/slice/basketSlice';
 
 export default function AboutProductPage() {
 	const { id } = useParams();
@@ -48,7 +49,7 @@ export default function AboutProductPage() {
 							)}
 							<button
 								className={s.btn}
-								onClick={() => dispatch(basketAddAction(id))}
+								onClick={() => dispatch(basketAdd(id))}
 							>
 								To card
 							</button>

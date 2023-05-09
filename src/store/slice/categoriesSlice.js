@@ -1,5 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+export const asyncLoadCategories = createAsyncThunk(
+	'categories / asyncLoadCategories',
+	async () => {
+		const response = await fetch('http://localhost:3333/categories/all');
+		const data = await response.json();
+		return data;
+	}
+);
 
 export const categoriesSlice = createSlice({
 	name: 'categories',
