@@ -3,6 +3,7 @@ const PRODUCTS_SEARCH_FILTER = 'PRODUCTS_SEARCH_FILTER';
 const PRODUCTS_RESET_FILTER = 'PRODUCTS_RESET_FILTER';
 const PRODUCTS_SORT_PRICE = 'PRODUCTS_SORT_PRICE';
 const PRODUCTS_FILTER_PRICE = 'PRODUCTS_FILTER_PRICE';
+const PRODUCTS_SALE = 'PRODUCTS_SALE';
 
 export const productLoadAction = (payload) => ({
 	type: PRODUCTS_LOAD,
@@ -22,6 +23,10 @@ export const productFilterAction = (payload) => ({
 	type: PRODUCTS_FILTER_PRICE,
 	payload,
 });
+export const productSaleAction = (state, {payload} )=> ({
+	type: PRODUCTS_SALE,
+	payload,
+});
 
 const getPrice = ({ filteredPrice }) => +filteredPrice;
 
@@ -30,6 +35,7 @@ export const productsReducer = (state = [], action) => {
 		return action.payload.map((item) => ({
 			...item,
 			show: true,
+			show_sale: item.discont_price ? item : '',
 			show_flg: true,
 			filteredPrice: item.discont_price ? item.discont_price : item.price,
 		}));
@@ -38,9 +44,9 @@ export const productsReducer = (state = [], action) => {
 			...item,
 			show: item.title.toLowerCase().startsWith(action.payload.toLowerCase()),
 		}));
-	}else if (action.type === PRODUCTS_RESET_FILTER) {
+	} else if (action.type === PRODUCTS_RESET_FILTER) {
 		return state.map((item) => ({ ...item, show: true }));
-	}else if (action.type === PRODUCTS_FILTER_PRICE) {
+	} else if (action.type === PRODUCTS_FILTER_PRICE) {
 		const filterPrice = () => {
 			/* setProduct((previosValue) =>
 				previosValue
@@ -63,6 +69,18 @@ export const productsReducer = (state = [], action) => {
 				}
 				return 0;
 			});
-	}
+	} /* else if (action.type === PRODUCTS_SALE) {
+		
+			state.list = state.list.map(item => {
+				if (item.discont_price !== null) {
+					state.list = state.list.map(elem=>({...elem, show_sale: true}))
+				} else {
+					return {...item}
+				}
+			})
+		
+		
+		
+	} */
 	return state;
 };

@@ -16,7 +16,7 @@ import { asyncLoadProductsAction } from '../../store/asyncAction/products';
 import ProductsPage from '../../pages/ProductsPage';
 import AboutProductPage from '../../pages/AboutProductPage';
 import AllProductsPage from '../../pages/AllProductsPage';
-import { productFilterAction } from '../../store/reducer/productsReducer';
+
 
 function App() {
 	const dispatch = useDispatch();
@@ -24,7 +24,7 @@ function App() {
 	useEffect(() => {
 		dispatch(asyncLoadCategoriesAction);
 		dispatch(asyncLoadProductsAction);
-		dispatch(productFilterAction)
+		
 	}, []);
 
 	return (

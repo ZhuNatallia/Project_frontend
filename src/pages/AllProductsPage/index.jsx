@@ -4,15 +4,15 @@ import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 import ProductsFilter from '../../components/ProductsFilter';
 import Pagination from '../../components/Pagination';
-import { productsResetFilter } from '../../store/reducer/productsReducer';
-
+/* import { productsResetFilter } from '../../store/reducer/productsReducer'; */
+import { productsReset } from '../../store/slice/productSlice';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products);
 
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(productsResetFilter())
+		dispatch(productsReset())
 	}, [])
 
 	const [products, setProducts] = useState([]);

@@ -14,16 +14,12 @@ export default function ProductItem({
 	const dispatch = useDispatch();
 	const link_img = 'http://localhost:3333';
 	const link = `/product/${id}`;
-	/* const priceProcent = (discont_price * 100 / price)
-	const sale = (100 - priceProcent).toFixed(2)}; */
 
-	const isSale = ({ isSale }) => (isSale ? s.active : '');
 
 	return (
 		<div className={s.item}>
 			<Link to={link} className={s.link}>
 				<img src={`${link_img}${image}`} alt={title} />
-
 				<h5>{title} </h5>
 			</Link>
 

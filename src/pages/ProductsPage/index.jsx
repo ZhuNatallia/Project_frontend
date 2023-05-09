@@ -4,13 +4,13 @@ import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsFilter from '../../components/ProductsFilter';
-import { productsResetFilter } from '../../store/reducer/productsReducer';
-
+/* import { productsResetFilter } from '../../store/reducer/productsReducer'; */
+import { productsReset } from '../../store/slice/productSlice';
 
 export default function ProductsPage() {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(productsResetFilter())
+		dispatch(productsReset())
 	}, [])
 
 	const { id } = useParams();
@@ -37,7 +37,7 @@ export default function ProductsPage() {
 	);
 	/* const category = useSelector((state) => state.categories); */
 	
-	
+
 	return (
 		<div>
 			<h2> {category.title}</h2>

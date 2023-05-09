@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import s from './style.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import {
+/* import {
 	productFilterAction,
+	productSaleAction,
 	productSortAction,
-} from '../../store/reducer/productsReducer';
+} from '../../store/reducer/productsReducer'; */
+import { productSort } from '../../store/slice/productSlice';
 import ProductsFilterBar from '../ProductsFilterBar';
 
-export default function ProductsFilter() {
+export default function ProductsFilter({sale}) {
 	const products = useSelector((state) => state.products.list);
 
 	const dispatch = useDispatch();
 
 	const sorthOnChange = (event) => {
-		dispatch(productSortAction(+event.target.value));
+		dispatch(productSort(+event.target.value));
 	};
-	const filterOnChange = (event) => {
+/* 	const filterOnChange = (event) => {
 		dispatch(productFilterAction());
 	};
-	/* const [state, setState] = useState(false); */
 
+	
+	const [checkboxState, setcheckboxState] = useState(false);
+
+const productSaleOnChange = (event) => {
+	setcheckboxState(event.target.checked)
+	dispatch(productSaleAction(event.target.checked));
+	};
 	const [priceFilter, setPriceFilter] = useState({
 		min: -Infinity,
 		max: Infinity,
-	});
+	}); */
 	/* const [products, setProduct] = useState(list); */
 
 	/* const filterPrice = () => {
@@ -37,7 +45,7 @@ export default function ProductsFilter() {
 		);
 	}; */
 
-	useEffect(() => {
+/* 	useEffect(() => {
 		productFilterAction();
 	}, [priceFilter]);
 
@@ -52,11 +60,11 @@ export default function ProductsFilter() {
 			...previosValue,
 			min: +event.target.value || Infinity,
 		}));
-	};
+	}; */
 
 	return (
 		<fieldset className={s.container}>
-			<form>
+			{/* <form>
 				<span>Price</span>
 				<input
 					type='number'
@@ -71,13 +79,9 @@ export default function ProductsFilter() {
 					onChange={() => dispatch(productFilterAction(maxInput))}
 				/>
 			</form>
-			{/* <div>
-				<p>Discounted items {state ? 'yes' : 'No'}</p>
-				<input
-					type='checkbox'
-					checked={state}
-					onChange={() => setState(!state)}
-				/>
+			<div>
+				<p>Discounted items</p>
+				<input type='checkbox' onChange={productSaleOnChange()} />
 			</div> */}
 
 			<div>
@@ -88,7 +92,7 @@ export default function ProductsFilter() {
 					<option value='2'>Price down</option>
 				</select>
 			</div>
-			<ProductsFilterBar/>
+			<ProductsFilterBar />
 		</fieldset>
 	);
 }
