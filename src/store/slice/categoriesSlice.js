@@ -15,9 +15,23 @@ export const categoriesSlice = createSlice({
 		list: [],
 	},
 	reducers: {
-        categoriesLoad(state, action) {
-            state.list= action.payload
-        },
+		categoriesLoad(state, action) {
+			state.list = action.payload;
+		},
+	},
+	extraReducers: (builder) => {
+		builder
+			.addCase(asyncLoadCategories.pending, (state) => {
+				state.status = 'loading';
+			})
+			.addCase(asyncLoadCategories.fulfilled, (state, { payload }) => {
+				state.status = 'resolve';
+				state.list = payload;
+			})
+			.addCase(asyncLoadCategories.rejected, (state, { payload }) => {
+				state.status = 'rejected';
+				state.error = payload;
+			});
 	},
 });
 

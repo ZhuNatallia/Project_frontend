@@ -8,7 +8,9 @@ import ProductsFilter from '../../components/ProductsFilter';
 import { productsReset } from '../../store/slice/productSlice';
 
 export default function ProductsPage() {
+
 	const dispatch = useDispatch();
+	
 	useEffect(() => {
 		dispatch(productsReset())
 	}, [])

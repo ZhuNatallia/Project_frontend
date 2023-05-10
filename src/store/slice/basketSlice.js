@@ -6,7 +6,7 @@ const writeToLocalStorage = (basket) =>
 export const basketSlice = createSlice({
 	name: 'basket',
 	initialState: {
-		list: JSON.parse(localStorage.getItem('basket')) ?? [],
+		list: JSON.parse(localStorage.getItem('basket')) || [],
 	},
 	reducers: {
 		basketIncrement(state, action) {

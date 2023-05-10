@@ -9,7 +9,7 @@ export default function AboutProductPage() {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const product = useSelector(({ products }) =>
-		products.find((item) => item.id === +id)
+		products.list.find((item) => item.id === +id)
 	);
 	const link_img = 'http://localhost:3333';
 

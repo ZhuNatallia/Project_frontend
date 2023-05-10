@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from '../../pages/MainPage';
-
 import AllSalesPage from '../../pages/AllSalesPage';
 import BasketPage from '../../pages/BasketPage';
 import CategoriesPage from '../../pages/CategoriesPage';
@@ -9,22 +8,22 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import Nav from './Nav';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
 import Footer from '../Footer';
-import { asyncLoadProductsAction } from '../../store/asyncAction/products';
-
 import ProductsPage from '../../pages/ProductsPage';
 import AboutProductPage from '../../pages/AboutProductPage';
 import AllProductsPage from '../../pages/AllProductsPage';
+/* import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
+import { asyncLoadProductsAction } from '../../store/asyncAction/products'; */
+import { asyncLoadProducts } from '../../store/slice/productSlice';
+import { asyncLoadCategories } from '../../store/slice/categoriesSlice';
 
 
 function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(asyncLoadCategoriesAction);
-		dispatch(asyncLoadProductsAction);
-		
+		dispatch(asyncLoadCategories());
+		dispatch(asyncLoadProducts());
 	}, []);
 
 	return (
