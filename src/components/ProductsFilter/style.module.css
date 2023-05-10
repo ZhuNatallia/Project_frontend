@@ -2,3 +2,11 @@
     display: flex;
     padding: 30px;
 }
+
+.filter_container input{
+    padding: 5px;
+}
+
+.filter_container input::-webkit-outer-spin-button, .filter_container input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}

@@ -7,7 +7,6 @@ export const asyncLoadProducts = createAsyncThunk(
 		const data = await response.json();
 
 		return data;
-		
 	}
 );
 const getPrice = ({ filteredPrice }) => +filteredPrice;
@@ -38,15 +37,20 @@ export const productSlice = createSlice({
 			state.list = state.list.map((item) => ({ ...item, show: true }));
 		},
 		productSort(state, action) {
-			
-			state.list = state.list.sort((a, b) => {
-				if (action.payload === 1) {
-					return getPrice(a) - getPrice(b);
-				} else if (action.payload === 2) {
-					return getPrice(b) - getPrice(a);
-				}
-				return 0;
-			});
+			if (action.payload === 1) {
+				state.list = state.list.sort((a, b) => getPrice(a) - getPrice(b));
+			} else if (action.payload === 2) {
+				state.list = state.list.sort((a, b) => getPrice(b) - getPrice(a));
+			}
+			/* return 0 */;
+			/* 	state.list = state.list.sort((a, b) => {
+					if (action.payload === 1) {
+						return getPrice(a) - getPrice(b);
+					} else if (action.payload === 2) {
+						return getPrice(b) - getPrice(a);
+					}
+					return 0;
+				}); */
 		},
 	},
 	extraReducers: (builder) => {
@@ -54,15 +58,15 @@ export const productSlice = createSlice({
 			.addCase(asyncLoadProducts.pending, (state) => {
 				state.status = 'loading';
 			})
-			.addCase(asyncLoadProducts.fulfilled, (state,{payload} ) => {
+			.addCase(asyncLoadProducts.fulfilled, (state, { payload }) => {
 				state.status = 'resolve';
 				state.list = payload;
 			})
-			.addCase(asyncLoadProducts.rejected, (state,{payload} ) => {
+			.addCase(asyncLoadProducts.rejected, (state, { payload }) => {
 				state.status = 'rejected';
-				state.error = payload
+				state.error = payload;
 			});
-	}
+	},
 });
 
 export const { productLoad, productsSearch, productsReset, productSort } =

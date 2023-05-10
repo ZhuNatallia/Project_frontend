@@ -13,7 +13,7 @@ export default function ProductsFilterBar() {
 
 	return (
 		<div className={s.container}>
-			<input type='text' placeholder='поиск...' onChange={searchOnChange} />
+			<input type='text' placeholder='search...' onChange={searchOnChange} />
 		</div>
 	);
 }

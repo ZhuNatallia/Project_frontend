@@ -17,17 +17,6 @@ export default function ProductsPage() {
 
 	const { id } = useParams();
 
-	/* const productsAll = useSelector((state) => state.products);
-
-	const [products, setProducts] = useState(productsAll);
-
-	useEffect(() => {
-		if (id !== undefined) {
-			const data = productsAll.filter((item) => item.categoryId === +id);
-			setProducts(data);
-		}
-	}, [id]); */
-
 	const products = useSelector((state) => {
 		if (id === undefined) {
 			return state.products.list;
@@ -37,7 +26,6 @@ export default function ProductsPage() {
 	}); 
 	const category = useSelector((state) => state.categories.list.filter((item) => +id === +item.id)
 	);
-	/* const category = useSelector((state) => state.categories); */
 	
 
 	return (
@@ -46,7 +34,7 @@ export default function ProductsPage() {
 			<ProductsFilter />
 			<div className={s.container}>
 				{products
-					.filter(({ show }) => show)
+					.filter(({ show_flg }) => show_flg)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />
 					))}

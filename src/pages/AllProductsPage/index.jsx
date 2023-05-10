@@ -9,15 +9,26 @@ import { productsReset } from '../../store/slice/productSlice';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products.list);
+	/* const price = useSelector((state)=> state.products.list.price) */
 
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(productsReset())
 	}, [])
 
-	const [products, setProducts] = useState([]);
+	const [product, setProducts] = useState([]);
 	const [crntPage, setCrntPage] = useState(1);
 	const [countProductsPage, setCountProductsPage] = useState(9);
+
+	/* const [products, setProduct] = useState(price);  */
+
+	const filterByPrice = ({ min, max }) =>
+		setProducts((state) =>
+			state.map((item) => ({
+				...item,
+				show_flg: item.price <= max && item.price >= min,
+			}))
+		);
 
 	useEffect(() => {
 		setProducts(state);
@@ -28,7 +39,7 @@ export default function AllProductsPage() {
 
 	return (
 		<div>
-			<ProductsFilter />
+			<ProductsFilter filterByPrice={filterByPrice} />
 			<div className={s.container}>
 				{state
 					.filter(({ show }) => show)

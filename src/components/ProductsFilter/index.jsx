@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productSort } from '../../store/slice/productSlice';
 import ProductsFilterBar from '../ProductsFilterBar';
 
-export default function ProductsFilter() {
+export default function ProductsFilter({ filterByPrice }) {
 	const products = useSelector((state) => state.products.list);
 
 	const dispatch = useDispatch();
@@ -17,7 +17,35 @@ export default function ProductsFilter() {
 	const sorthOnChange = (event) => {
 		dispatch(productSort(+event.target.value));
 	};
-/* 	const filterOnChange = (event) => {
+
+	const initialValue = { min: 0, max: Infinity };
+
+	const [price, setPrice] = useState(initialValue);
+
+	useEffect(() => filterByPrice(price), [price]);
+
+	const maxInput = (value) => {
+		setPrice(({ min }) => ({
+			min,
+			max: value,
+		}));
+	};
+	const minInput = (value) => {
+		setPrice(({ max }) => ({
+			max,
+			min: value,
+		}));
+	};
+
+	const maxHandler = ({ target }) => {
+		const value = +target.value === '' ? Infinity : +target.value;
+		maxInput(value);
+	};
+	const minHandler = ({ target }) => {
+		const value = +target.value;
+		minInput(value);
+	};
+	/* 	const filterOnChange = (event) => {
 		dispatch(productFilterAction());
 	};
 
@@ -28,10 +56,7 @@ const productSaleOnChange = (event) => {
 	setcheckboxState(event.target.checked)
 	dispatch(productSaleAction(event.target.checked));
 	};
-	const [priceFilter, setPriceFilter] = useState({
-		min: -Infinity,
-		max: Infinity,
-	}); */
+	 */
 	/* const [products, setProduct] = useState(list); */
 
 	/* const filterPrice = () => {
@@ -45,41 +70,31 @@ const productSaleOnChange = (event) => {
 		);
 	}; */
 
-/* 	useEffect(() => {
+	/* 	useEffect(() => {
 		productFilterAction();
 	}, [priceFilter]);
 
-	const maxInput = (event) => {
-		setPriceFilter((previosValue) => ({
-			...previosValue,
-			max: +event.target.value || Infinity,
-		}));
-	};
-	const minInput = (event) => {
-		setPriceFilter((previosValue) => ({
-			...previosValue,
-			min: +event.target.value || Infinity,
-		}));
-	}; */
+	 */
 
 	return (
 		<fieldset className={s.container}>
-			{/* <form>
+			<form className={s.filter_container}>
 				<span>Price</span>
 				<input
 					type='number'
 					placeholder='min'
-					value={priceFilter.min}
-					onChange={() => dispatch(productFilterAction(minInput))}
+					value={price.min === 0 ? '' : price.min}
+					onChange={minHandler}
 				/>
 				<input
 					type='number'
 					placeholder='max'
-					value={priceFilter.max}
-					onChange={() => dispatch(productFilterAction(maxInput))}
+					value={price.max === Infinity ? '' : price.max}
+					onChange={maxHandler}
 				/>
+				<button onClick={() => setPrice(initialValue)}>X</button>
 			</form>
-			<div>
+			{/*<div>
 				<p>Discounted items</p>
 				<input type='checkbox' onChange={productSaleOnChange()} />
 			</div> */}
