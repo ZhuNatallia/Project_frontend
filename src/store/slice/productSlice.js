@@ -45,6 +45,7 @@ export const productSlice = createSlice({
 				...item,
 				show: true,
 				show_sale: true,
+				show_flg: true
 			}));
 		},
 		productSort(state, action) {

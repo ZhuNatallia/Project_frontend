@@ -23,7 +23,7 @@ export const productFilterAction = (payload) => ({
 	type: PRODUCTS_FILTER_PRICE,
 	payload,
 });
-export const productSaleAction = (state, {payload} )=> ({
+export const productSaleAction = (state, { payload }) => ({
 	type: PRODUCTS_SALE,
 	payload,
 });
@@ -60,15 +60,14 @@ export const productsReducer = (state = [], action) => {
 		};
 		return state;
 	} else if (action.type === PRODUCTS_SORT_PRICE) {
-		return [...state] /* .slice() */
-			.sort((a, b) => {
-				if (action.payload === 1) {
-					return getPrice(a) - getPrice(b);
-				} else if (action.payload === 2) {
-					return getPrice(b) - getPrice(a);
-				}
-				return 0;
-			});
+		return [...state].sort((a, b) => {
+			if (action.payload === 1) {
+				return getPrice(a) - getPrice(b);
+			} else if (action.payload === 2) {
+				return getPrice(b) - getPrice(a);
+			}
+			return 0;
+		});
 	} /* else if (action.type === PRODUCTS_SALE) {
 		
 			state.list = state.list.map(item => {

@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { productSort, productsReset } from '../../store/slice/productSlice';
 
-export default function ProductsSaleFilter() {
+export default function ProductsSortFilter() {
 	const dispatch = useDispatch();
 
 	const sorthOnChange = (event) => {
 		dispatch(productSort(+event.target.value));
-    };
-    useEffect(() => {
-        dispatch(productsReset())
-    }, [])
+	};
+	useEffect(() => {
+		dispatch(productsReset());
+	}, []);
 	return (
 		<div>
 			<label htmlFor='sort'>Sorted</label>

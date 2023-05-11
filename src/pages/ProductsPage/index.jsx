@@ -8,12 +8,11 @@ import ProductsFilter from '../../components/ProductsFilter';
 import { productsReset } from '../../store/slice/productSlice';
 
 export default function ProductsPage() {
-
 	const dispatch = useDispatch();
-	
+
 	useEffect(() => {
-		dispatch(productsReset())
-	}, [])
+		dispatch(productsReset());
+	}, []);
 
 	const { id } = useParams();
 
@@ -21,12 +20,13 @@ export default function ProductsPage() {
 		if (id === undefined) {
 			return state.products.list;
 		} else {
-			return state.products.list.filter((item) => item.categoryId === +id);
+			return state.products.list
+				.filter((item) => item.categoryId === +id);
 		}
-	}); 
-	const category = useSelector((state) => state.categories.list.find((item) => +id === +item.id));
-	
-	
+	});
+	const category = useSelector((state) =>
+		state.categories.list.find((item) => +id === +item.id)
+	);
 
 	return (
 		<div>
@@ -34,7 +34,7 @@ export default function ProductsPage() {
 			<h2> {category.title}</h2>
 			<div className={s.container}>
 				{products
-					.filter(({ show_flg }) => show_flg)
+					.filter(({ show_sale, show_flg }) => show_sale && show_flg)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />
 					))}

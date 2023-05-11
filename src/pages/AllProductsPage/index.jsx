@@ -20,15 +20,6 @@ export default function AllProductsPage() {
 	const [crntPage, setCrntPage] = useState(1);
 	const [countProductsPage, setCountProductsPage] = useState(9);
 
-	
-
-	const filterByPrice = ({ min, max }) =>
-		setProducts((state) =>
-			state.map((item) => ({
-				...item,
-				show_flg: item.price <= max && item.price >= min,
-			}))
-		);
 
 	useEffect(() => {
 		setProducts(state);
@@ -39,7 +30,7 @@ export default function AllProductsPage() {
 
 	return (
 		<div>
-			<ProductsFilter filterByPrice={filterByPrice} />
+			<ProductsFilter />
 			<div className={s.container}>
 				{state
 					.filter(({ show }) => show)
