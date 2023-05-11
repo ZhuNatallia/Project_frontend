@@ -34,7 +34,7 @@ export default function ProductsPage() {
 			<h2> {category.title}</h2>
 			<div className={s.container}>
 				{products
-					.filter(({ show_sale, show_flg }) => show_sale && show_flg)
+					.filter(({show, show_sale, show_flg }) => show && show_sale && show_flg)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />
 					))}

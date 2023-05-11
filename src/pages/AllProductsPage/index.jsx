@@ -33,7 +33,7 @@ export default function AllProductsPage() {
 			<ProductsFilter />
 			<div className={s.container}>
 				{state
-					.filter(({ show }) => show)
+					.filter(({ show, show_sale, show_flg}) => show && show_sale && show_flg)
 					.slice(firstElem, lastElem)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />
