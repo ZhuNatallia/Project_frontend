@@ -24,14 +24,14 @@ export default function ProductsPage() {
 			return state.products.list.filter((item) => item.categoryId === +id);
 		}
 	}); 
-	const category = useSelector((state) => state.categories.list.filter((item) => +id === +item.id)
-	);
+	const category = useSelector((state) => state.categories.list.find((item) => +id === +item.id));
+	
 	
 
 	return (
 		<div>
+			<ProductsFilter/>
 			<h2> {category.title}</h2>
-			<ProductsFilter />
 			<div className={s.container}>
 				{products
 					.filter(({ show_flg }) => show_flg)

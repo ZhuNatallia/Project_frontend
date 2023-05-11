@@ -5,8 +5,15 @@ export const asyncLoadProducts = createAsyncThunk(
 	async () => {
 		const response = await fetch('http://localhost:3333/products/all');
 		const data = await response.json();
+		const newData = data.map((item) => ({
+			...item,
+			show: true,//сортировка по возрастанию и убыванию цены
+			show_sale: true, /* item.discont_price ? item : '' товары со скидкой*/
+			show_flg: true, //фильтрация по цене
+			filteredPrice: item.discont_price ? item.discont_price : item.price,
+		}));
 
-		return data;
+		return newData;
 	}
 );
 const getPrice = ({ filteredPrice }) => +filteredPrice;
@@ -21,7 +28,7 @@ export const productSlice = createSlice({
 			state.products = action.payload.map((item) => ({
 				...item,
 				show: true,
-				show_sale: item.discont_price ? item : '',
+				show_sale: true /* item.discont_price ? item : '' */,
 				show_flg: true,
 				filteredPrice: item.discont_price ? item.discont_price : item.price,
 			}));
@@ -34,24 +41,48 @@ export const productSlice = createSlice({
 			}));
 		},
 		productsReset(state) {
-			state.list = state.list.map((item) => ({ ...item, show: true }));
+			state.list = state.list.map((item) => ({
+				...item,
+				show: true,
+				show_sale: true,
+			}));
 		},
 		productSort(state, action) {
-			if (action.payload === 1) {
+			/* if (action.payload === 1) {
 				state.list = state.list.sort((a, b) => getPrice(a) - getPrice(b));
 			} else if (action.payload === 2) {
 				state.list = state.list.sort((a, b) => getPrice(b) - getPrice(a));
 			}
-			/* return 0 */;
-			/* 	state.list = state.list.sort((a, b) => {
+			return 0 */
+				state.list = state.list.sort((a, b) => {
 					if (action.payload === 1) {
 						return getPrice(a) - getPrice(b);
 					} else if (action.payload === 2) {
 						return getPrice(b) - getPrice(a);
 					}
 					return 0;
-				}); */
+				});
 		},
+		productSale(state,{payload}) {
+			state.list.map((item) => {
+				if(payload) {
+					item.show_sale=item.discont_price ? true : false
+				}else{
+					item.show_sale = true
+				}
+			})
+		},
+		productsFilter(state, { payload }) {
+			const { min = 0, max = Infinity } = payload
+			state.list.map(item => {
+				if (item.price <= max && item.price >= min) {
+					item.show_flg = true
+				} else {
+					item.show_flg = false
+				}
+			
+			})
+		}
 	},
 	extraReducers: (builder) => {
 		builder
@@ -69,7 +100,13 @@ export const productSlice = createSlice({
 	},
 });
 
-export const { productLoad, productsSearch, productsReset, productSort } =
-	productSlice.actions;
+export const {
+	productLoad,
+	productsSearch,
+	productsReset,
+	productSort,
+	productSale,
+	productsFilter,
+} = productSlice.actions;
 
 export default productSlice.reducer;

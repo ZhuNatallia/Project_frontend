@@ -9,7 +9,7 @@ import { productsReset } from '../../store/slice/productSlice';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products.list);
-	/* const price = useSelector((state)=> state.products.list.price) */
+	
 
 	const dispatch = useDispatch();
 	useEffect(() => {
@@ -20,7 +20,7 @@ export default function AllProductsPage() {
 	const [crntPage, setCrntPage] = useState(1);
 	const [countProductsPage, setCountProductsPage] = useState(9);
 
-	/* const [products, setProduct] = useState(price);  */
+	
 
 	const filterByPrice = ({ min, max }) =>
 		setProducts((state) =>

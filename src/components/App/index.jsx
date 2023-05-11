@@ -17,7 +17,6 @@ import { asyncLoadProductsAction } from '../../store/asyncAction/products'; */
 import { asyncLoadProducts } from '../../store/slice/productSlice';
 import { asyncLoadCategories } from '../../store/slice/categoriesSlice';
 
-
 function App() {
 	const dispatch = useDispatch();
 
