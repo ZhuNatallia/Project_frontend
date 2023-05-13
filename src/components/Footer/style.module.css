@@ -1,15 +1,59 @@
 .container {
-	height: 900px;
-	border: 1px solid black;
-	padding: 40px 30px;
+	height: 700px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	background-color: #f0f0f0;
+	padding: 120px 30px 20px 30px;
+	display: flex;
+	justify-content: space-between;
 }
 
-.maps{
-    height: 525px;
-    width: 1380px;
-    border: none;
+.container h3 {
+	font-size: 26px;
+	color: rgb(90, 91, 91);
+    padding-bottom: 20px;
+}
+.container p, .link{
+    padding: 30px 0;
+    font-size: 18px;
+    color: rgb(90, 91, 91);
 }
 
-.wrapper_contact{
-    display: flex;
+.icons img{
+    margin-right: 30px;
+}
+.adres h3{
+    padding-bottom: 50px;
+}
+.maps {
+	height: 525px;
+	width: 58%;
+	border: none;
+}
+
+.wrapper_contact {
+	width: 40%;
+	height: 525px;
+	display: grid;
+	grid-template-columns: 400px;
+	grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+	/* align-items: center;
+	justify-content: left; */
+	/* background-color: #f0f3f2; */
+	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+	border-radius: 5px;
+	padding-top: 30px;
+}
+
+.contact, .adres {
+    width: 100%;
+	text-align: left;
+    
+}
+.wrapper_contact a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	cursor: pointer;
 }

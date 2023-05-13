@@ -11,18 +11,17 @@ export default function Footer() {
 				<div className={s.contact}>
 					<h3>Contact</h3>
 					<p>+49 999 999 99 99</p>
-					<div>
+					<div className={s.icons}>
 						<img src={Icons1} alt='icons' />
 						<img src={Icons2} alt='icons' />
 					</div>
 				</div>
 				<div className={s.adres}>
-					<h3>Address</h3>
-					<Link to='https://www.google.com/search?q=telranDE' target='_blank'>
+					<h3>Adress</h3>
+					<Link className={s.link} to='https://www.google.com/search?q=telranDE' target='_blank'>
 						Linkstraße 2, 8 OG, 10785, Berlin, Deutschland
 					</Link>
-					<p>Working Hours:</p>
-					<p>24 hours a day</p>
+					<p>Working Hours: 24 hours a day</p>
 				</div>
 			</div>
 

@@ -10,7 +10,7 @@ export default function CustNavLink({...item}) {
     
 	return (
 		<div>
-			<NavLink className={s.link} data-count={totalCount || undefined}  to='/basket' {...item}>
+			<NavLink className={s.link} data-count={totalCount ?? undefined}  to='/basket' {...item}>
 				<img src={Basket} alt='icons' />
 			</NavLink>
 		</div>

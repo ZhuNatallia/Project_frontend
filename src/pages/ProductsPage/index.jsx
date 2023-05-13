@@ -25,7 +25,7 @@ export default function ProductsPage() {
 		}
 	});
 	const category = useSelector((state) =>
-		state.categories.list.find((item) => +id === +item.id)
+		state.categories.list.slice().filter((item) => +id === +item.id)
 	);
 
 	return (

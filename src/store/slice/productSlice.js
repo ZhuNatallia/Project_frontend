@@ -24,15 +24,15 @@ export const productSlice = createSlice({
 		list: [],
 	},
 	reducers: {
-		productLoad(state, action) {
+		/* productLoad(state, action) {
 			state.products = action.payload.map((item) => ({
 				...item,
 				show: true,
-				show_sale: true /* item.discont_price ? item : '' */,
+				show_sale: true,
 				show_flg: true,
 				filteredPrice: item.discont_price ? item.discont_price : item.price,
 			}));
-		},
+		}, */
 
 		productsSearch(state, action) {
 			state.list = state.list.map((item) => ({
@@ -49,12 +49,6 @@ export const productSlice = createSlice({
 			}));
 		},
 		productSort(state, action) {
-			/* if (action.payload === 1) {
-				state.list = state.list.sort((a, b) => getPrice(a) - getPrice(b));
-			} else if (action.payload === 2) {
-				state.list = state.list.sort((a, b) => getPrice(b) - getPrice(a));
-			}
-			return 0 */
 				state.list = state.list.sort((a, b) => {
 					if (action.payload === 1) {
 						return getPrice(a) - getPrice(b);

@@ -4,11 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from './media/logo1.png';
 import CustNavLink from '../../CustNavLink';
 
-
 export default function Nav() {
-	
 	const links = [
-		{ id: 1, label: 'Main Page', to: '/' },
+		{ id: 1, label: 'Home Page', to: '/' },
 		{ id: 2, label: 'All products', to: '/products/all' },
 		{ id: 3, label: 'All sales', to: '/products/sale' },
 	];
@@ -17,17 +15,20 @@ export default function Nav() {
 
 	return (
 		<nav className={s.nav}>
-			<img src={Logo} alt='logo' />
-			<button>
-				<Link to= '/catalog'>Catalog</Link>
-				</button>
+			<div className={s.logo}>
+				<img src={Logo} alt='logo' />
+				<button>
+				<Link to='/categories'>Catalog</Link>
+			</button>
+			</div>
+			
+			
 			{links.map(({ id, label, ...item }) => (
 				<NavLink className={isActive} key={id} {...item}>
 					{label}
 				</NavLink>
 			))}
-			<CustNavLink/>
-			
+			<CustNavLink />
 		</nav>
 	);
 }

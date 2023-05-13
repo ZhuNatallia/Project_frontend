@@ -6,21 +6,44 @@ import ProductsFilter from '../../components/ProductsFilter';
 import Pagination from '../../components/Pagination';
 /* import { productsResetFilter } from '../../store/reducer/productsReducer'; */
 import { productsReset } from '../../store/slice/productSlice';
+import { useLocation, useParams } from 'react-router-dom';
 
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products.list);
-	
+
+	const typeCategory = useLocation();
+
+	/*  const { id } = useParams();
+	const { state } = useSelector((state) => {
+		if (id === 'all') {
+			return state.products.list;
+		} else if (id === 'sale') {
+			const productsSale = state.products.list.filter(
+				({ discont_price }) => discont_price
+			);
+			return {
+				...state.products,
+				list: productsSale,
+			};
+		} else {
+			const productsCategory = state.products.list.filter(
+				({ categoryId }) => +categoryId === +id
+			);
+			return {
+				...state.products,
+				list: productsCategory,
+			};
+		}
+	}); */
 
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(productsReset())
-	}, [])
+		dispatch(productsReset());
+	}, []);
 
 	const [product, setProducts] = useState([]);
 	const [crntPage, setCrntPage] = useState(1);
 	const [countProductsPage, setCountProductsPage] = useState(9);
-
-
 	useEffect(() => {
 		setProducts(state);
 	}, []);
@@ -31,9 +54,12 @@ export default function AllProductsPage() {
 	return (
 		<div>
 			<ProductsFilter />
+			<h2> {typeCategory.state}</h2>
 			<div className={s.container}>
 				{state
-					.filter(({ show, show_sale, show_flg}) => show && show_sale && show_flg)
+					.filter(
+						({ show, show_sale, show_flg }) => show && show_sale && show_flg
+					)
 					.slice(firstElem, lastElem)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />

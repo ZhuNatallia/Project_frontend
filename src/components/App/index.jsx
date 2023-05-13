@@ -30,12 +30,15 @@ function App() {
 			<Nav />
 			<Routes>
 				<Route path='/' element={<MainPage />} />
+				<Route path='/categories' element={<CategoriesPage />} />
+				<Route path='/product/:id' element={<AboutProductPage />} />
+
+				{/* <Route path='/products/categories/:id' element={<AllProductsPage />} /> */}
 				<Route path='/products/all' element={<AllProductsPage />} />
 				<Route path='/products/sale' element={<AllSalesPage />} />
-				<Route path='/basket' element={<BasketPage />} />
-				<Route path='/catalog' element={<CategoriesPage />} />
-				<Route path='/product/:id' element={<AboutProductPage />} />
 				<Route path='/categories/:id' element={<ProductsPage />} />
+
+				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
