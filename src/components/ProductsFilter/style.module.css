@@ -1,12 +1,18 @@
-.container{
-    display: flex;
-    padding: 30px;
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px;
+	border: none;
+	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 }
 
-.filter_container input{
-    padding: 5px;
+.filter_container input {
+	padding: 5px;
 }
 
-.filter_container input::-webkit-outer-spin-button, .filter_container input::-webkit-inner-spin-button{
-    -webkit-appearance: none;
+.filter_container input::-webkit-outer-spin-button,
+.filter_container input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
 }

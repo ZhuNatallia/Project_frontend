@@ -52,7 +52,7 @@ export default function AllProductsPage() {
 	const countElem = Math.ceil(state.length / countProductsPage);
 
 	return (
-		<div>
+		<div className={s.wrapper}>
 			<ProductsFilter />
 			<h2> {typeCategory.state}</h2>
 			<div className={s.container}>

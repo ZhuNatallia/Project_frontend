@@ -14,21 +14,22 @@ export default function Nav() {
 	const isActive = ({ isActive }) => (isActive ? s.active : '');
 
 	return (
-		<nav className={s.nav}>
-			<div className={s.logo}>
-				<img src={Logo} alt='logo' />
-				<button>
-				<Link to='/categories'>Catalog</Link>
-			</button>
-			</div>
-			
-			
-			{links.map(({ id, label, ...item }) => (
-				<NavLink className={isActive} key={id} {...item}>
-					{label}
-				</NavLink>
-			))}
-			<CustNavLink />
-		</nav>
+		<div className={s.nav_wrapper}>
+			<nav className={s.nav}>
+				<div className={s.logo}>
+					<img src={Logo} alt='logo' />
+					<button className={s.btn}>
+						<Link to='/categories'>Catalog</Link>
+					</button>
+				</div>
+
+				{links.map(({ id, label, ...item }) => (
+					<NavLink className={isActive} key={id} {...item}>
+						{label}
+					</NavLink>
+				))}
+				<CustNavLink />
+			</nav>
+		</div>
 	);
 }

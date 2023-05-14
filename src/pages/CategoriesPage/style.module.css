@@ -1,6 +1,18 @@
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 30px;
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+	grid-template-rows: 380px;
+	gap: 45px;
+	margin: 30px 60px;
+}
+.page h3 {
+	font-size: 24px;
+	margin-top: 140px;
+	padding-left: 60px;
+}
+.page {
+	background-color: #f0f0f0;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        padding: 30px 60px;
 }

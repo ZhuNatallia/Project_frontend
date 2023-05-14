@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function MainPage() {
 	return (
-		<div>
+		<div className={s.container}>
 			<div className={s.welcome_wrapper}>
 				<img src={Background} alt='photo' />
 				<h1>Sale</h1>

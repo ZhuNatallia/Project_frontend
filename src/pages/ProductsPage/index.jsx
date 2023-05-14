@@ -29,7 +29,7 @@ export default function ProductsPage() {
 	);
 
 	return (
-		<div>
+		<div className={s.wrapper}>
 			<ProductsFilter/>
 			<h2> {category.title}</h2>
 			<div className={s.container}>

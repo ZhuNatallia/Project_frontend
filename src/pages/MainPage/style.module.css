@@ -1,9 +1,14 @@
+/* .container {
+	position: static;
+} */
+
 .welcome_wrapper {
 	min-width: 1440px;
 	height: 600px;
 	position: relative;
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	margin-top: 160px;
 }
 
 .welcome_wrapper img {
@@ -13,8 +18,8 @@
 }
 
 .welcome_wrapper h1 {
-    font-size: 80px;
-    color: aliceblue;
+	font-size: 80px;
+	color: aliceblue;
 	position: absolute;
 	width: 175px;
 	height: 104px;
@@ -22,8 +27,8 @@
 	top: 197px;
 }
 .welcome_wrapper h2 {
-    font-size: 64px;
-    color: aliceblue;
+	font-size: 64px;
+	color: aliceblue;
 	position: absolute;
 	width: 397px;
 	height: 82px;
@@ -31,16 +36,16 @@
 	top: 304px;
 }
 .welcome_wrapper button {
-    font-size: 25px;
-    padding: 25px 50px;
-    border-radius: 12px;
-    cursor: pointer;
+	font-size: 25px;
+	padding: 10px 30px;
+	border-radius: 12px;
+	cursor: pointer;
 	position: absolute;
 	width: 155px;
 	height: 82px;
 	left: 51px;
 	top: 446px;
-text-decoration: none;
+	text-decoration: none;
 	outline: none;
 	display: inline-block;
 	overflow: hidden;
@@ -48,8 +53,6 @@ text-decoration: none;
 	/* border: none; */
 	color: #085f2d;
 	transition: 0.2s ease-in-out;
-    
-    
 }
 .welcome_wrapper button:before {
 	content: '';

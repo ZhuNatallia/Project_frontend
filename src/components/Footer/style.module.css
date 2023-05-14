@@ -38,11 +38,6 @@
 	grid-template-columns: 400px;
 	grid-template-rows: repeat(2, 1fr);
     gap: 50px;
-	/* align-items: center;
-	justify-content: left; */
-	/* background-color: #f0f3f2; */
-	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 	border-radius: 5px;
 	padding-top: 30px;
 }

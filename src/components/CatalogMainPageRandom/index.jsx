@@ -16,7 +16,7 @@ export default function CatalogMainPageRandom() {
 			<div className={s.title}>
 				<h2>Catalog</h2>
 				<Link to='/categories'>
-					<button >All categories</button>
+					<button className={s.btn}>All categories</button>
 				</Link>
 			</div>
 
