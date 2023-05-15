@@ -93,19 +93,23 @@
 		background: rgb(211, 212, 212);
 		background: linear-gradient(
 			180deg,
-			rgba(211, 212, 212, .9) 0%,
-			rgba(131, 182, 163, 0.35) 100%
+			rgba(211, 212, 212, 0.8) 0%,
+			rgba(131, 182, 163, 0.3) 100%
 		);
 		padding: 30px;
 		border-radius: 0 0 5px 5px;
+		transform: translateY(-100%);
+		transition: transform, opacity;
+		transition-duration: 0.5s;
 	}
 	.nav_open {
 		opacity: 1;
 		pointer-events: auto;
+		transform: translateY(0);
 	}
 }
-@media (max-width: 575px){
-	.btn{
+@media (max-width: 575px) {
+	.btn {
 		opacity: 0;
 		pointer-events: none;
 	}
