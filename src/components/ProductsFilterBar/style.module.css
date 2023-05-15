@@ -1,9 +1,9 @@
 .container{
-    border: 2px solid black;
-    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     max-width: 900px;
     margin: 20px auto;
 }
 .container input{
-    padding: 5px;
+    padding: 7px 10px;
 }

@@ -4,15 +4,25 @@ import Basket from './media/basket.png';
 import { useSelector } from 'react-redux';
 import s from './style.module.css'
 
+
 export default function CustNavLink({...item}) {
 	const basket = useSelector((state) => state.basket.list);
     const totalCount = basket.reduce((acc, { count }) => acc + count, 0);
     
+
+	
+
 	return (
 		<div>
-			<NavLink className={s.link} data-count={totalCount ?? undefined}  to='/basket' {...item}>
+			<NavLink
+				className={s.link} 
+				data-count={totalCount ?? undefined}
+				to='/basket'
+				{...item}
+			>
 				<img src={Basket} alt='icons' />
 			</NavLink>
+			
 		</div>
 	);
 }

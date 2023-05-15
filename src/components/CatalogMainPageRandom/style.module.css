@@ -30,9 +30,9 @@
 	
 	position: relative;
 	overflow: hidden;
-	border: 2px solid #3ca465;
+	border: 2px solid #3ca47c;
 	border-radius: 10px;
-	color: #085f2d;
+	color: #0c533e;
 	transition: 0.2s ease-in-out;
     cursor: pointer;
     font-size: 20px;
@@ -52,7 +52,7 @@
 	transform: skewX(-45deg);
 }
 .btn:hover {
-	background-color: #37b96b;
+	background-color: #279c6f;
 	color: #f9f5f8;
 }
 .btn:hover:before {

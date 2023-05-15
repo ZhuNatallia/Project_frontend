@@ -19,7 +19,7 @@ export default function AboutProductPage() {
 		} else {
 			const { id, image, title, price, discont_price, description } = product;
 			return (
-				<div>
+				<div className={s.container}>
 					<h2>{title} </h2>
 					<div className={s.item}>
 						<img src={`${link_img}${image}`} alt={title} />
