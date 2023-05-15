@@ -43,14 +43,14 @@ export default function BasketItem({
 								fontSize: '20px',
 							}}
 						>
-							{price} $
+							{price}$
 						</p>
 						<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-							{discont_price} $
+							{discont_price}$
 						</p>
 					</div>
 				) : (
-					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
+					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price}$</p>
 				)}
 				<button onClick={() => dispatch(basketRemove(id))}>X</button>
 			</div>

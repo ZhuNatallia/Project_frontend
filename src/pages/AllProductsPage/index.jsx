@@ -43,7 +43,7 @@ export default function AllProductsPage() {
 
 	const [product, setProducts] = useState([]);
 	const [crntPage, setCrntPage] = useState(1);
-	const [countProductsPage, setCountProductsPage] = useState(9);
+	const [countProductsPage, setCountProductsPage] = useState(12);
 	useEffect(() => {
 		setProducts(state);
 	}, []);

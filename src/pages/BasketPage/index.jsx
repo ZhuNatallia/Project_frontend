@@ -14,7 +14,7 @@ export default function BasketPage() {
 	});
 
 	return (
-		<div>
+		<div className={s.basket_page}>
 			<p className={s.title}>Shopping cart</p>
 			<div className={s.wrapper}>
 				{products.length === 0 ? (
@@ -23,20 +23,22 @@ export default function BasketPage() {
 					<>
 						<div className={s.container}>
 							<Link to='/products/all' className={s.wrapper_chevron}>
-								
 								<p>Back to the store</p>
 								<div className={s.container_chevron}>
 									<div className={s.chevron}></div>
 									<div className={s.chevron}></div>
 									<div className={s.chevron}></div>
 								</div>
-							</Link>
-
-							{data.map((item) => (
+								</Link>
+							</div>
+							<div className={s.wrapper_basket}>
+								<div className={s.basket_calculation}>
+									{data.map((item) => (
 								<BasketItem key={item.id} {...item} />
-							))}
-						</div>
-						<BasketCalculation />
+								))}
+								</div>
+								<BasketCalculation />
+							</div>
 					</>
 				)}
 			</div>
