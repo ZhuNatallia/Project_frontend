@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { productSort, productsReset } from '../../store/slice/productSlice';
+import s from './style.module.css';
 
 export default function ProductsSortFilter() {
 	const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export default function ProductsSortFilter() {
 		dispatch(productsReset());
 	}, []);
 	return (
-		<div>
+		<div className={s.container}>
 			<label htmlFor='sort'>Sorted</label>
 			<select id='sort' onChange={sorthOnChange}>
 				<option value='by default'>by default</option>

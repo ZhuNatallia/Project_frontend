@@ -1,6 +1,6 @@
 .wrapper {
 	width: 500px;
-	height: 455px;
+	height: 460px;
 	padding: 30px 40px;
 	display: flex;
 	flex-direction: column;
@@ -9,7 +9,7 @@
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	background-color: #f8faf9;
-	border-radius: 15px;
+	border-radius: 5px;
 }
 
 .btn {

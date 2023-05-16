@@ -11,9 +11,8 @@ import { useLocation, useParams } from 'react-router-dom';
 export default function AllProductsPage() {
 	const state = useSelector((state) => state.products.list);
 
-	const typeCategory = useLocation();
-
-	/*  const { id } = useParams();
+	/*const typeCategory = useLocation();  
+	const { id } = useParams();
 	const { state } = useSelector((state) => {
 		if (id === 'all') {
 			return state.products.list;
@@ -54,7 +53,7 @@ export default function AllProductsPage() {
 	return (
 		<div className={s.wrapper}>
 			<ProductsFilter />
-			<h2> {typeCategory.state}</h2>
+			<h2> All products</h2>
 			<div className={s.container}>
 				{state
 					.filter(

@@ -20,21 +20,27 @@ export default function ProductsPage() {
 		if (id === undefined) {
 			return state.products.list;
 		} else {
-			return state.products.list
-				.filter((item) => item.categoryId === +id);
+			return state.products.list.filter((item) => item.categoryId === +id);
 		}
 	});
 	const category = useSelector((state) =>
-		state.categories.list.slice().filter((item) => +id === +item.id)
+		state.categories.list.filter((item) => +id === +item.id)
 	);
+	/* function titleCategory() {
+		if (categories !== undefined) {
+			return categories.title
+		}
+	}  */
 
 	return (
 		<div className={s.wrapper}>
-			<ProductsFilter/>
+			<ProductsFilter />
 			<h2> {category.title}</h2>
 			<div className={s.container}>
 				{products
-					.filter(({show, show_sale, show_flg }) => show && show_sale && show_flg)
+					.filter(
+						({ show, show_sale, show_flg }) => show && show_sale && show_flg
+					)
 					.map((item) => (
 						<ProductItem key={item.id} {...item} />
 					))}

@@ -1,5 +1,5 @@
 .item {
-	width: 300px;
+	max-width: 300px;
 	height: 350px;
 	gap: 15px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
@@ -23,7 +23,7 @@
 	color: black;
 }
 
-.item_link p{
+.item_link p {
 	font-size: 20px;
-
 }
+

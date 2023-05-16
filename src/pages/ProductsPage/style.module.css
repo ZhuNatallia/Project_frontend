@@ -1,9 +1,10 @@
 .container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-template-rows: 380px;
-	gap: 45px;
-	margin: 20px;
+	gap: 35px;
+	margin: 0 60px;
+
 }
 
 .wrapper {
@@ -11,4 +12,16 @@
 	background-color: #f0f0f0;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.wrapper h2{
+	font-size: 42px;
+}
+@media (max-width: 575px) {
+	.wrapper{
+		margin-left: 20px;
+	}
+	.container {
+		margin: 0 20px;
+	}
 }

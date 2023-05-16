@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { productSale } from '../../store/slice/productSlice';
 import { useDispatch } from 'react-redux';
+import s from './style.module.css'
 
 export default function ProductsCheckBox() {
 
@@ -12,7 +13,7 @@ export default function ProductsCheckBox() {
 		};
 
 	return (
-		<div>
+		<div className={s.container}>
 			<label>Discounted items:{/* {checkboxState ? '+' : '-'} */} </label>
 			<input
 				type='checkbox'

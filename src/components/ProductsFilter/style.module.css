@@ -7,12 +7,45 @@
 	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 }
+.filter_container{ 
+	display: flex;
+	gap: 10px;
+}
 
 .filter_container input {
+	padding: 7px;
+	border-radius: 5px;
+	border: none;
+	width: 100px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.filter_container button{
+	padding: 3px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	background-color: #d3d4d4;
+	width: 30px;
+}
+.filter_container span{
 	padding: 5px;
 }
 
 .filter_container input::-webkit-outer-spin-button,
 .filter_container input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
+}
+@media(max-width: 991px){
+	.container{
+		gap: 20px;
+		flex-wrap: wrap;
+	} 
+}
+
+@media(max-width: 575px){
+	.container{
+		flex-direction: column;
+		gap: 20px;
+	}
 }
