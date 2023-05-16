@@ -38,8 +38,6 @@
 	border-radius: 12px;
 	cursor: pointer;
 	position: absolute;
-	width: 155px;
-	height: 82px;
 	left: 51px;
 	top: 446px;
 	text-decoration: none;
@@ -47,7 +45,6 @@
 	display: inline-block;
 	overflow: hidden;
 	border: 2px solid #3ca47c;
-	/* border: none; */
 	color: #0c533e;
 	transition: 0.2s ease-in-out;
 }
@@ -72,4 +69,12 @@
 .welcome_wrapper button:hover:before {
 	left: 162px;
 	transition: 0.5s ease-in-out;
+}
+@media(max-width: 575px){
+	.welcome_wrapper h1{
+		font-size: 60px;
+	}
+	.welcome_wrapper h2{
+		font-size: 44px;
+	}
 }

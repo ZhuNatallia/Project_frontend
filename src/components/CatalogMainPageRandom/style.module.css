@@ -1,41 +1,38 @@
-.wrapper{
-    padding: 50px 30px;
-    background-color: #f0f0f0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+.wrapper {
+	padding: 50px 30px;
+	background-color: #f0f0f0;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
 }
 
-.title{
-    
-    display: grid;
-    grid-template-columns: 100px 100px 1fr;
-    gap: 50px;
-    align-items: center;
-    padding: 30px;
+.title {
+	display: grid;
+	grid-template-columns: 100px 100px 1fr;
+	gap: 50px;
+	align-items: center;
+	padding: 30px;
 }
-.title h2{
-    font-size: 30px;
+.title h2 {
+	font-size: 30px;
 }
-.container{
-    width: 100%;
-    display: flex;
-    gap: 30px;
+.container {
+	width: 100%;
+	display: flex;
+	gap: 30px;
 }
 .btn {
 	text-decoration: none;
 	outline: none;
 	display: inline-block;
 	padding: 9px 29px;
-	
 	position: relative;
 	overflow: hidden;
 	border: 2px solid #3ca47c;
 	border-radius: 10px;
 	color: #0c533e;
 	transition: 0.2s ease-in-out;
-    cursor: pointer;
-    font-size: 20px;
+	cursor: pointer;
+	font-size: 20px;
 }
 .btn:before {
 	content: '';
@@ -59,8 +56,14 @@
 	left: 162px;
 	transition: 0.5s ease-in-out;
 }
-@media (max-width: 991px){
-	.container{
+@media (max-width: 991px) {
+	.container {
 		flex-wrap: wrap;
+	}
+}
+@media (max-width: 575px) {
+	.title {
+		grid-template-columns: 80px 80px 1fr;
+		padding: 15px 0;
 	}
 }

@@ -52,7 +52,7 @@ h4 {
 	cursor: pointer;
 	font-size: 20px;
 	width: 260px;
-	right: 230px;
+	right: 232px;
 	bottom: 40px;
 }
 .btn:before {
@@ -76,4 +76,12 @@ h4 {
 .btn:hover:before {
 	left: 162px;
 	transition: 0.5s ease-in-out;
+}
+@media(max-width: 575px){
+	.container input, .container h4, .container p {
+		right: 80px;
+	}
+	.btn{
+		right: 62px;
+	}
 }
