@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import Footer from '../Footer';
 import ProductsPage from '../../pages/ProductsPage';
 import AboutProductPage from '../../pages/AboutProductPage';
-import AllProductsPage from '../../pages/AllProductsPage';
+/* import AllProductsPage from '../../pages/AllProductsPage'; */
 /* import { asyncLoadCategoriesAction } from '../../store/asyncAction/categories';
 import { asyncLoadProductsAction } from '../../store/asyncAction/products'; */
 import { asyncLoadProducts } from '../../store/slice/productSlice';
@@ -32,12 +32,9 @@ function App() {
 				<Route path='/' element={<MainPage />} />
 				<Route path='/categories' element={<CategoriesPage />} />
 				<Route path='/product/:id' element={<AboutProductPage />} />
-
-				{/* <Route path='/products/categories/:id' element={<AllProductsPage />} /> */}
-				<Route path='/products/all' element={<AllProductsPage />} />
+				<Route path='/products/all' element={<ProductsPage />} />
 				<Route path='/products/sale' element={<AllSalesPage />} />
 				<Route path='/categories/:id' element={<ProductsPage />} />
-
 				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
