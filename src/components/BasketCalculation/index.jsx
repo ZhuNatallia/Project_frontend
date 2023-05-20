@@ -11,7 +11,7 @@ export default function BasketCalculation() {
 		return acc + item.count * product.price;
 	}, 0);
 
-	const urlSale = 'http://localhost:3333//order/send ';
+	const urlSale = 'http://localhost:3333/order/send ';
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
@@ -34,9 +34,9 @@ export default function BasketCalculation() {
 			<h3>Order details</h3>
 			<p>Total: {totalPrice} $</p>
 			<form onSubmit={onSubmit}>
-				<input type='tel' name='phone' placeholder='+49' />
+				<input type='tel' name='phone' placeholder='+49'/>
+				<button className={s.btn}>Order</button>
 			</form>
-			<button className={s.btn}>Order</button>
 		</div>
 	);
 }
