@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
 import { useSelector } from 'react-redux';
+import GreenButton from '../../UI/GreenButton';
 
 export default function BasketCalculation() {
 	const basket = useSelector((state) => state.basket.list);
@@ -34,8 +35,8 @@ export default function BasketCalculation() {
 			<h3>Order details</h3>
 			<p>Total: {totalPrice} $</p>
 			<form onSubmit={onSubmit}>
-				<input type='tel' name='phone' placeholder='+49'/>
-				<button className={s.btn}>Order</button>
+				<input type='tel' name='phone' placeholder='+49' />
+				<GreenButton >Order</GreenButton>
 			</form>
 		</div>
 	);

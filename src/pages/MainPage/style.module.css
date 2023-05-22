@@ -32,44 +32,7 @@
 	left: 50px;
 	top: 304px;
 }
-.welcome_wrapper button {
-	font-size: 25px;
-	padding: 10px 30px;
-	border-radius: 12px;
-	cursor: pointer;
-	position: absolute;
-	left: 51px;
-	top: 446px;
-	text-decoration: none;
-	outline: none;
-	display: inline-block;
-	overflow: hidden;
-	border: 2px solid #3ca47c;
-	color: #0c533e;
-	transition: 0.2s ease-in-out;
-}
-.welcome_wrapper button:before {
-	content: '';
-	background: linear-gradient(
-		90deg,
-		rgba(245, 241, 241, 0.13),
-		rgba(241, 239, 239, 0.62)
-	);
-	height: 150px;
-	width: 50px;
-	position: absolute;
-	top: -7px;
-	left: -80px;
-	transform: skewX(-45deg);
-}
-.welcome_wrapper button:hover {
-	background-color: #279c6f;
-	color: #f9f5f8;
-}
-.welcome_wrapper button:hover:before {
-	left: 162px;
-	transition: 0.5s ease-in-out;
-}
+
 @media(max-width: 575px){
 	.welcome_wrapper h1{
 		font-size: 60px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
 import BackgroundPhoto from './media/5.jpg';
+import GreenButton from '../../UI/GreenButton';
 
 export default function SaleMainPage() {
 	const urlSale = 'http://localhost:3333/sale/send';
@@ -28,7 +29,7 @@ export default function SaleMainPage() {
 			<p>on the first order</p>
 			<form onSubmit={onSubmit}>
 				<input type='tel' name='phone' placeholder='+49' />
-				<button className={s.btn}>Get a discount</button>
+				<GreenButton>Get a discount</GreenButton>
 			</form>
 			<img className={s.backgroundPhoto} src={BackgroundPhoto} alt='photo' />
 		</div>
