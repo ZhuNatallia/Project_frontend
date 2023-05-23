@@ -20,7 +20,7 @@ export default function MainPage() {
 				<h1>Sale</h1>
 				<h2>New season</h2>
 				<Link to='/products/sale'>
-					<GreenButton style={{ left: 35, top: 446, width: 150, height: 70, fontSize: 25 }}>
+					<GreenButton style={{ left: 35, top: 446, width: 150, height: 65, fontSize: 25 }}>
 						Sale
 					</GreenButton>
 				</Link>

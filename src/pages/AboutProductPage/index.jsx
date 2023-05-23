@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import s from './style.module.css';
 /* import { basketAddAction } from '../../store/reducer/basketReducer'; */
 import { basketAdd } from '../../store/slice/basketSlice';
+import GreenButton from '../../UI/GreenButton';
 
 export default function AboutProductPage() {
 	const { id } = useParams();
@@ -35,7 +36,7 @@ export default function AboutProductPage() {
 									>
 										{price} €
 									</p>
-									<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+									<p>
 										{discont_price} €
 									</p>
 									<p style={{ color: 'red', fontSize: '20px' }}>
@@ -43,13 +44,18 @@ export default function AboutProductPage() {
 									</p>
 								</div>
 							) : (
-								<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-									{price} €
+								<p >
+									Price: {price} €
 								</p>
 							)}
-							<button className={s.btn} onClick={() => dispatch(basketAdd(id))}>
-								To card
-							</button>
+							<div className={s.wrapperBtn}>
+								<GreenButton
+									onClick={() => dispatch(basketAdd(id))}
+									style={{ position: 'static' }}
+								>
+									To card
+								</GreenButton>
+							</div>
 							<p>{description} </p>
 						</div>
 					</div>

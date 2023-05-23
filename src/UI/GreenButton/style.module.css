@@ -2,7 +2,7 @@
 	text-decoration: none;
 	outline: none;
 	display: inline-block;
-	padding: 9px 29px;
+	padding: 12px 29px;
 	margin: 9px 19px;
 	position: absolute;
 	overflow: hidden;
@@ -23,10 +23,10 @@
 		rgba(245, 241, 241, 0.13),
 		rgba(241, 239, 239, 0.62)
 	);
-	height: 150px;
+	height: 60px;
 	width: 50px;
 	position: absolute;
-	top: -7px;
+	top: 1px;
 	left: -80px;
 	transform: skewX(-45deg);
 }
