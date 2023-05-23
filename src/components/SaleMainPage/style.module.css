@@ -37,12 +37,18 @@ h4 {
 	right: 250px;
 	bottom: 230px;
 }
+.wrapperBtn {
+	position: relative;
+	top: 470px;
+}
 
-@media(max-width: 575px){
-	.container input, .container h4, .container p {
+@media (max-width: 575px) {
+	.container input,
+	.container h4,
+	.container p {
 		right: 80px;
 	}
-	.btn{
-		right: 62px;
+	.wrapperBtn {
+		left: 170px;
 	}
 }
