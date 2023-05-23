@@ -40,7 +40,10 @@ export default function BasketCalculation() {
 
 			<form onSubmit={onSubmit} className={s.form}>
 				<input type='tel' name='phone' placeholder='+49' />
-				<GreenButton style={{ right: 50, bottom: 40 }}>Order</GreenButton>
+				<div className={s.wrapperBtn}>
+					<GreenButton style={{ right: 50, bottom: 40 }}>Order</GreenButton>
+				</div>
+				
 			</form>
 		</div>
 	);

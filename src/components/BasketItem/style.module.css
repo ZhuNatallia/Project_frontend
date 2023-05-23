@@ -75,6 +75,7 @@
 	.item{
 		flex-direction: column;
 		justify-content: space-between;
+		padding: 20px;
 		width: 300px;
 		height: 450px;
 	}
@@ -82,5 +83,4 @@
 		flex-direction: row;
 		justify-content: center;
 	}
-
 }

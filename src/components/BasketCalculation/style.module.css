@@ -2,7 +2,6 @@
 	width: 400px;
 	height: 360px;
 	padding: 30px 0;
-	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
@@ -33,4 +32,14 @@
 	display: flex;
 	align-items:flex-end;
 	justify-content: space-between;
+}
+@media(max-width: 1200px){
+	.wrapper{
+		width: 300px;
+	}
+	.wrapperBtn{
+		position: relative;
+		right: -70px;
+		bottom: -130px;
+	}
 }
