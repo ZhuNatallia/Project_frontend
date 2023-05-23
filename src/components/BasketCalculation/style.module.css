@@ -1,51 +1,35 @@
 .wrapper {
-	width: 500px;
-	height: 460px;
-	padding: 30px 40px;
+	width: 400px;
+	height: 360px;
+	padding: 30px 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: stretch;
+	gap: 50px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	background-color: #f8faf9;
 	border-radius: 5px;
+	position: relative;
+}
+.form input {
+	width: 260px;
+	padding: 15px;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	background-color: white;
+	border-radius: 10px;
+}
+.title {
+	font-size: 20px;
+}
+.wrapper h3, .price {
+	font-size: 26px;
 }
 
-.btn {
-	text-decoration: none;
-	outline: none;
-	display: inline-block;
-	padding: 9px 29px;
-	margin: 9px 19px;
-	position: relative;
-	overflow: hidden;
-	border: 2px solid #3ca47c;
-	border-radius: 10px;
-	color: #0c533e;
-	transition: 0.2s ease-in-out;
-    cursor: pointer;
-    font-size: 20px;
-}
-.btn:before {
-	content: '';
-	background: linear-gradient(
-		90deg,
-		rgba(245, 241, 241, 0.13),
-		rgba(241, 239, 239, 0.62)
-	);
-	height: 50px;
-	width: 50px;
-	position: absolute;
-	top: -7px;
-	left: -80px;
-	transform: skewX(-45deg);
-}
-.btn:hover {
-	background-color: #279c6f;
-	color: #f9f5f8;
-}
-.btn:hover:before {
-	left: 162px;
-	transition: 0.5s ease-in-out;
+.container_price {
+	width: 100%;
+	display: flex;
+	align-items:flex-end;
+	justify-content: space-between;
 }

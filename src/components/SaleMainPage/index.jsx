@@ -29,7 +29,7 @@ export default function SaleMainPage() {
 			<p>on the first order</p>
 			<form onSubmit={onSubmit}>
 				<input type='tel' name='phone' placeholder='+49' />
-				<GreenButton>Get a discount</GreenButton>
+				<GreenButton >Get a discount</GreenButton>
 			</form>
 			<img className={s.backgroundPhoto} src={BackgroundPhoto} alt='photo' />
 		</div>

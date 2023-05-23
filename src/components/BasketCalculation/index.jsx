@@ -33,10 +33,14 @@ export default function BasketCalculation() {
 	return (
 		<div className={s.wrapper}>
 			<h3>Order details</h3>
-			<p>Total: {totalPrice} $</p>
-			<form onSubmit={onSubmit}>
+			<div className={s.container_price}>
+				<p className={s.title}>Total:</p>
+				<p className={s.price}>{totalPrice} $</p>
+			</div>
+
+			<form onSubmit={onSubmit} className={s.form}>
 				<input type='tel' name='phone' placeholder='+49' />
-				<GreenButton >Order</GreenButton>
+				<GreenButton style={{ right: 50, bottom: 40 }}>Order</GreenButton>
 			</form>
 		</div>
 	);
