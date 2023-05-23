@@ -23,15 +23,11 @@ export default function BasketItem({
 			<div className={s.item}>
 				<img src={`${link_img}${image}`} alt={title} />
 				<div className={s.info}>
-					<p>{title} </p>
+					<p className={s.title}>{title} </p>
 					<div className={s.btns}>
-						<button onClick={() => dispatch(basketIncrement(id))}>
-							+
-						</button>
+						<button onClick={() => dispatch(basketIncrement(id))}>+</button>
 						<p>{count}</p>
-						<button onClick={() => dispatch(basketDecrement(id))}>
-							-
-						</button>
+						<button onClick={() => dispatch(basketDecrement(id))}>-</button>
 					</div>
 				</div>
 				{discont_price !== null ? (
@@ -43,16 +39,21 @@ export default function BasketItem({
 								fontSize: '20px',
 							}}
 						>
-							{price}$
+							{price} €
 						</p>
 						<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-							{discont_price}$
+							{discont_price} €
 						</p>
 					</div>
 				) : (
-					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price}$</p>
+					<p
+						className={s.price}
+						style={{ fontWeight: 'bold', fontSize: '26px' }}
+					>
+						{price} €
+					</p>
 				)}
-				<button onClick={() => dispatch(basketRemove(id))}>X</button>
+				<button className={s.clearBtn} onClick={() => dispatch(basketRemove(id))}>X</button>
 			</div>
 		</div>
 	);

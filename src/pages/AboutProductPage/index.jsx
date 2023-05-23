@@ -33,10 +33,10 @@ export default function AboutProductPage() {
 											fontSize: '20px',
 										}}
 									>
-										{price} $
+										{price} €
 									</p>
 									<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-										{discont_price} $
+										{discont_price} €
 									</p>
 									<p style={{ color: 'red', fontSize: '20px' }}>
 										{((price / discont_price) * 100 - 100).toFixed(1)} %
@@ -44,13 +44,10 @@ export default function AboutProductPage() {
 								</div>
 							) : (
 								<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
-									{price} $
+									{price} €
 								</p>
 							)}
-							<button
-								className={s.btn}
-								onClick={() => dispatch(basketAdd(id))}
-							>
+							<button className={s.btn} onClick={() => dispatch(basketAdd(id))}>
 								To card
 							</button>
 							<p>{description} </p>

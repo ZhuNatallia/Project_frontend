@@ -34,19 +34,17 @@ export default function ProductItem({
 							fontSize: '20px',
 						}}
 					>
-						{price} $
+						{price} €
 					</p>
-					<p
-						style={{ fontWeight: 'bold', fontSize: '26px' }}
-					>
-						{discont_price} $
+					<p style={{ fontWeight: 'bold', fontSize: '26px' }}>
+						{discont_price} €
 					</p>
 					<p style={{ color: 'red', fontSize: '20px' }}>
 						{((price / discont_price) * 100 - 100).toFixed(1)} %
 					</p>
 				</div>
 			) : (
-				<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} $</p>
+				<p style={{ fontWeight: 'bold', fontSize: '26px' }}>{price} €</p>
 			)}
 
 			<button className={s.btn} onClick={() => dispatch(basketAdd(id))}>

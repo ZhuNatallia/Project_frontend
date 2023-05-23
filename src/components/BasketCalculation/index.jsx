@@ -35,7 +35,7 @@ export default function BasketCalculation() {
 			<h3>Order details</h3>
 			<div className={s.container_price}>
 				<p className={s.title}>Total:</p>
-				<p className={s.price}>{totalPrice} $</p>
+				<p className={s.price}>{totalPrice} €</p>
 			</div>
 
 			<form onSubmit={onSubmit} className={s.form}>
