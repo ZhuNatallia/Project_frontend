@@ -5,6 +5,7 @@ import s from './style.module.css';
 import ProductsFilter from '../../components/ProductsFilter';
 
 export default function AllSalesPage() {
+	
 	const products = useSelector((state) => state.products.list);
 	const discontProducts = products.filter(
 		({ discont_price }) => discont_price !== null
@@ -14,7 +15,11 @@ export default function AllSalesPage() {
 			<ProductsFilter/>
 			<p className={s.title}>Products with sale</p>
 			<div className={s.container}>
-				{discontProducts.map((item) => (
+				{discontProducts
+					.filter(
+						({ show, show_sale, show_flg }) => show && show_sale && show_flg
+					)
+					.map((item) => (
 					<ProductItem key={item.id} {...item} />
 				))}
 			</div>

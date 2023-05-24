@@ -27,11 +27,7 @@ export default function ProductsPage() {
 	const category = useSelector((state) =>
 		state.categories.list.filter((item) => +id === +item.id)
 	);
-	/* function titleCategory() {
-		if (categories !== undefined) {
-			return categories.title
-		}
-	}  */
+
 	const [product, setProducts] = useState([]);
 	const [crntPage, setCrntPage] = useState(1);
 	const [countProductsPage, setCountProductsPage] = useState(12);
@@ -44,7 +40,7 @@ export default function ProductsPage() {
 
 	return (
 		<div className={s.wrapper}>
-			<ProductsFilter />
+			<ProductsFilter/>
 			<h2> {category.title}</h2>
 			<div className={s.container}>
 				{products

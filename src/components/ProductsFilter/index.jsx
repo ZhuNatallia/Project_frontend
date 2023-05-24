@@ -6,20 +6,15 @@
 import React, { useEffect, useState } from 'react';
 import s from './style.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	productsFilter,
-	productsReset,
-} from '../../store/slice/productSlice';
+import { productsFilter, productsReset } from '../../store/slice/productSlice';
 import ProductsFilterBar from '../ProductsFilterBar';
 import ProductsSortFilter from '../ProductsSortFilter';
 import ProductsCheckBox from '../ProductsCheckBox';
-
 
 export default function ProductsFilter() {
 	const dispatch = useDispatch();
 	const products = useSelector((state) => state.products.list);
 
-	
 	const initialValue = { min: 0, max: Infinity };
 	const [price, setPrice] = useState(initialValue);
 
@@ -49,8 +44,6 @@ export default function ProductsFilter() {
 		minInput(value);
 	};
 
-
-
 	return (
 		<fieldset className={s.container}>
 			<form className={s.filter_container}>
@@ -69,8 +62,8 @@ export default function ProductsFilter() {
 				/>
 				<button onClick={() => setPrice(initialValue)}>X</button>
 			</form>
-			<ProductsCheckBox/>
-			<ProductsSortFilter/>
+			<ProductsCheckBox />
+			<ProductsSortFilter />
 			<ProductsFilterBar />
 		</fieldset>
 	);
