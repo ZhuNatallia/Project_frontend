@@ -1,3 +1,5 @@
+import s from './style.module.css';
+
 function Pagination(props) {
 	const { setCrntPage, countElem, crntPage } = props;
 
@@ -15,16 +17,14 @@ function Pagination(props) {
 
 	return (
 		<div>
-			<div style={{ display: 'flex', gap: '10px', border: '2px solid black', padding: 20}}>
+			<div className={s.container}>
 				{numberPage.map((elem) => (
 					<div
+						className={s.item}
 						onClick={() => setCrntPage(elem)}
 						style={{
-							width: 20,
-							height: 20,
-							backgroundColor: elem === crntPage ? 'purple' : 'brown',
-							textAlign: 'center',
-							color: 'white', cursor: 'pointer', 
+							backgroundColor: elem === crntPage ? 'grey' : '#f8faf9',
+							color: elem === crntPage ? 'white' : 'rgb(62, 63, 63)',
 						}}
 					>
 						{elem}
