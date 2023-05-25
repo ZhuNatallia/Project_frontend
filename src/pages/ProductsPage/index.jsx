@@ -7,6 +7,7 @@ import ProductsFilter from '../../components/ProductsFilter';
 /* import { productsResetFilter } from '../../store/reducer/productsReducer'; */
 import { productsReset } from '../../store/slice/productSlice';
 import Pagination from '../../components/Pagination';
+import ScrollButton from '../../UI/GreenButton/ScrollButton';
 
 export default function ProductsPage() {
 	const dispatch = useDispatch();
@@ -82,7 +83,8 @@ export default function ProductsPage() {
 						setCrntPage={setCrntPage}
 						countElem={countElem}
 						crntPage={crntPage}
-					/>
+						/>
+						<ScrollButton/>
 				</div>
 			)}
 		</div>
