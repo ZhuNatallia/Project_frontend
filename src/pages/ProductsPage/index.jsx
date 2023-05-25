@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,6 +16,7 @@ export default function ProductsPage() {
 	}, []);
 
 	const { id } = useParams();
+	const pageLocation = useLocation();
 
 	const products = useSelector((state) => {
 		if (id === undefined) {
@@ -25,7 +26,7 @@ export default function ProductsPage() {
 		}
 	});
 	const category = useSelector((state) =>
-		state.categories.list.filter((item) => +id === +item.id)
+		state.categories.list.find((item) => +id === item.id)
 	);
 
 	const [product, setProducts] = useState([]);
@@ -38,25 +39,52 @@ export default function ProductsPage() {
 	const firstElem = lastElem - countProductsPage;
 	const countElem = Math.ceil(products.length / countProductsPage);
 
+	const discontProducts = products.filter(
+		({ discont_price }) => discont_price !== null
+	);
+
 	return (
-		<div className={s.wrapper}>
-			<ProductsFilter/>
-			<h2> {category.title}</h2>
-			<div className={s.container}>
-				{products
-					.filter(
-						({ show, show_sale, show_flg }) => show && show_sale && show_flg
-					)
-					.slice(firstElem, lastElem)
-					.map((item) => (
-						<ProductItem key={item.id} {...item} />
-					))}
-			</div>
-			<Pagination
-				setCrntPage={setCrntPage}
-				countElem={countElem}
-				crntPage={crntPage}
-			/>
+		<div>
+			{pageLocation.pathname === '/products/sale' ? (
+				<div className={s.wrapper}>
+					<ProductsFilter />
+					<p className={s.title}>Products with sale</p>
+					<div className={s.container}>
+						{discontProducts
+							.filter(
+								({ show, show_sale, show_flg }) => show && show_sale && show_flg
+							)
+							.map((item) => (
+								<ProductItem key={item.id} {...item} />
+							))}
+					</div>
+					<Pagination
+						setCrntPage={setCrntPage}
+						countElem={countElem}
+						crntPage={crntPage}
+					/>
+				</div>
+			) : (
+				<div className={s.wrapper}>
+					<ProductsFilter />
+					<h2> {category === undefined ? 'All Products' : category.title}</h2>
+					<div className={s.container}>
+						{products
+							.filter(
+								({ show, show_sale, show_flg }) => show && show_sale && show_flg
+							)
+							.slice(firstElem, lastElem)
+							.map((item) => (
+								<ProductItem key={item.id} {...item} />
+							))}
+					</div>
+					<Pagination
+						setCrntPage={setCrntPage}
+						countElem={countElem}
+						crntPage={crntPage}
+					/>
+				</div>
+			)}
 		</div>
 	);
 }

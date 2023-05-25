@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from '../../pages/MainPage';
-import AllSalesPage from '../../pages/AllSalesPage';
 import BasketPage from '../../pages/BasketPage';
 import CategoriesPage from '../../pages/CategoriesPage';
 import NotFoundPage from '../../pages/NotFoundPage';
@@ -33,7 +32,7 @@ function App() {
 				<Route path='/categories' element={<CategoriesPage />} />
 				<Route path='/product/:id' element={<AboutProductPage />} />
 				<Route path='/products/all' element={<ProductsPage />} />
-				<Route path='/products/sale' element={<AllSalesPage />} />
+				<Route path='/products/sale' element={<ProductsPage />} />
 				<Route path='/categories/:id' element={<ProductsPage />} />
 				<Route path='/basket' element={<BasketPage />} />
 				<Route path='/*' element={<NotFoundPage />} />
