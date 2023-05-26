@@ -1,0 +1,38 @@
+.modal {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal_content {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	padding: 25px;
+	width: 400px;
+    height: 300px;
+    position: relative;
+
+}
+.modal.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.btnClose{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
