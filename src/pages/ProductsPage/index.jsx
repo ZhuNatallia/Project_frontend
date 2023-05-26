@@ -49,7 +49,7 @@ export default function ProductsPage() {
 			{pageLocation.pathname === '/products/sale' ? (
 				<div className={s.wrapper}>
 					<ProductsFilter />
-					<p className={s.title}>Products with sale</p>
+					<h2 className={s.title}>Products with sale</h2>
 					<div className={s.container}>
 						{discontProducts
 							.filter(

@@ -1,3 +1,4 @@
+
 .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -15,6 +16,7 @@
 
 .wrapper h2 {
 	font-size: 30px;
+	padding: 30px 60px;
 }
 @media (max-width: 575px) {
 	.wrapper {

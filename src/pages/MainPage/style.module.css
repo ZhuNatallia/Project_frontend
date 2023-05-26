@@ -1,12 +1,12 @@
+
 .welcome_wrapper {
-	max-width: 1440px;
+	/* max-width: 1440px; */
 	height: 600px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	margin-top: 160px;
 }
-
 
 .welcome_wrapper img {
 	width: 100%;
@@ -33,11 +33,11 @@
 	top: 304px;
 }
 
-@media(max-width: 575px){
-	.welcome_wrapper h1{
+@media (max-width: 575px) {
+	.welcome_wrapper h1 {
 		font-size: 60px;
 	}
-	.welcome_wrapper h2{
+	.welcome_wrapper h2 {
 		font-size: 44px;
 	}
 }

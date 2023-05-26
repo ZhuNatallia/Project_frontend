@@ -6,7 +6,7 @@ import CategoriesPage from '../../pages/CategoriesPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 import Nav from './Nav';
 import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Footer from '../Footer';
 import ProductsPage from '../../pages/ProductsPage';
 import AboutProductPage from '../../pages/AboutProductPage';
@@ -15,11 +15,9 @@ import AboutProductPage from '../../pages/AboutProductPage';
 import { asyncLoadProductsAction } from '../../store/asyncAction/products'; */
 import { asyncLoadProducts } from '../../store/slice/productSlice';
 import { asyncLoadCategories } from '../../store/slice/categoriesSlice';
-import ModalWindow from '../ModalWindow';
 
 function App() {
-	const [modalActive, setModalEctive] = useState(false);
-
+	
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -29,8 +27,7 @@ function App() {
 
 	return (
 		<div>
-			<button onClick={() => setModalEctive(true)}>open</button>
-			<ModalWindow active={modalActive} setActive={setModalEctive} />
+			
 			<Nav />
 			<Routes>
 				<Route path='/' element={<MainPage />} />
@@ -43,6 +40,7 @@ function App() {
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
+			
 		</div>
 	);
 }

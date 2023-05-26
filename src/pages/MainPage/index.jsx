@@ -9,11 +9,7 @@ import GreenButton from '../../UI/GreenButton';
 import ScrollButton from '../../UI/GreenButton/ScrollButton';
 
 export default function MainPage() {
-	const style = {
-		padding: '10px 30px',
-		left: '51px',
-		top: '446px',
-	};
+	
 	return (
 		<div className={s.container}>
 			<div className={s.welcome_wrapper}>
