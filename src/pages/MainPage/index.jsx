@@ -6,6 +6,7 @@ import SaleMainPage from '../../components/SaleMainPage';
 import SaleSlice from '../../components/SaleSlice';
 import { Link } from 'react-router-dom';
 import GreenButton from '../../UI/GreenButton';
+import ScrollButton from '../../UI/GreenButton/ScrollButton';
 
 export default function MainPage() {
 	const style = {
@@ -28,6 +29,7 @@ export default function MainPage() {
 			<CatalogMainPageRandom />
 			<SaleMainPage />
 			<SaleSlice />
+			<ScrollButton/>
 		</div>
 	);
 }

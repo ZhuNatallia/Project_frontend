@@ -4,7 +4,6 @@
 	grid-template-rows: 380px;
 	gap: 35px;
 	margin: 0 60px;
-
 }
 
 .wrapper {
@@ -14,11 +13,11 @@
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.wrapper h2{
-	font-size: 42px;
+.wrapper h2 {
+	font-size: 30px;
 }
 @media (max-width: 575px) {
-	.wrapper{
+	.wrapper {
 		margin-left: 20px;
 	}
 	.container {

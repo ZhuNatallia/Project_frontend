@@ -4,6 +4,7 @@ import BasketItem from '../../components/BasketItem';
 import s from './style.module.css';
 import BasketCalculation from '../../components/BasketCalculation';
 import { Link } from 'react-router-dom';
+import ScrollButton from '../../UI/GreenButton/ScrollButton';
 
 export default function BasketPage() {
 	const basket = useSelector((state) => state.basket.list);
@@ -42,6 +43,7 @@ export default function BasketPage() {
 					</>
 				)}
 			</div>
+			<ScrollButton/>
 		</div>
 	);
 }
